@@ -1,0 +1,36 @@
+:root {
+	--text: #111;
+	--bg: #fff;
+	--text-2: #444;
+	--text-bg: #b5b5b5;
+	--desktop-width: 1080px;
+}
+
+* {
+	font-family: 'Inter', sans-serif;
+	color: var(--text-color);
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--background-color);
+	margin: 0;
+	padding: 0;
+}
+
+/* don't change! */
+main {
+	padding: 0 !important;
+	margin: 0 !important;
+	flex-grow: 1;
+	overflow-y: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+html {
+	padding: 0 !important;
+	margin: 0;
+	scroll-behavior: smooth;
+}
