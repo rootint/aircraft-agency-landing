@@ -33,18 +33,16 @@
 		<h2 class="fade-in-longer">
 			Weaving creativity into branding and transforming ideas into exemplary digital experiences.
 		</h2>
+		<div class="scroll-down fade-in">
+			<div class="scroll-down-icon">
+				<ChevronDown color="#999" width="2" size="48" />
+			</div>
+			<div class="monospace-text">Scroll down to see more</div>
+		</div>
 	{:else}
 		<h2 style="color: #fff;">Hi</h2>
 	{/if}
 </section>
-{#if index == text.length}
-	<div class="scroll-down fade-in">
-		<div class="scroll-down-icon">
-			<ChevronDown color="#999" width="2" size="48" />
-		</div>
-		<div class="monospace-text">Scroll down to see more</div>
-	</div>
-{/if}
 
 <style>
 	.monospace-text {
@@ -69,13 +67,15 @@
 	}
 
 	section.hero {
-		width: 100vw;
 		padding: 0 64px;
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		justify-content: center;
-		height: 100vh;
+		margin: 0;
+		width: 100vw;
+		height: 100svh;
+        min-height: -webkit-fill-available;
 	}
 	h1 {
 		font-size: 64px;

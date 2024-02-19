@@ -114,6 +114,8 @@
 	/* Apply the animation to your parallax component */
 	.parallax {
 		animation: fadeIn 5s ease-in;
+        margin: 0;
+        padding: 0;
 	}
 	.circle-circle {
 		animation: rotate 4s linear infinite;
@@ -127,30 +129,11 @@
 			transform: rotate(180deg);
 		}
 	}
-
-	svg {
-		animation: rotation 5s linear infinite;
-	}
-	.line {
-		position: absolute;
-		width: 100%;
-		top: 20%;
-		background-image: linear-gradient(to right, #999 33%, rgba(255, 255, 255, 0) 0%);
-		background-position: bottom;
-		background-size: 8px 8px;
-		background-repeat: repeat-x;
-		height: 1px;
-	}
-	p.monospace-background {
-		font-family: 'Roboto Mono', monospace;
-		margin: 0;
-		color: #aaa;
-		font-size: 16px;
-		position: absolute;
-	}
 	.layer {
 		height: 100%;
 		width: 100%;
+        padding: 0;
+        margin: 0;
 	}
 	.decoration-container {
 		/* position: absolute; */
@@ -178,7 +161,7 @@
 	}
 	#scene {
 		position: fixed;
-		height: 100vh;
+		height: 100svh;
 		width: 100vw;
 		top: 0;
 		left: 0;
@@ -191,11 +174,11 @@
 	@keyframes fadeIn {
 		from {
 			opacity: 0.5;
-			transform: translateY(20px);
+			/* transform: translateY(20px); */
 		}
 		to {
 			opacity: 1;
-			transform: translateY(0px);
+			/* transform: translateY(0px); */
 		}
 	}
 </style>
