@@ -10,6 +10,8 @@
 	font-family: 'Inter', sans-serif;
 	color: var(--text-color);
 	box-sizing: border-box;
+  letter-spacing: -0.05%;
+  line-height: 130%;
 }
 
 body {
@@ -24,9 +26,9 @@ main {
 	margin: 0 !important;
 	flex-grow: 1;
 	overflow-y: auto;
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
 
 html {

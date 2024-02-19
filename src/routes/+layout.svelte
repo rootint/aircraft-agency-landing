@@ -1,10 +1,11 @@
 <script>
 	import Header from '../components/Header.svelte';
+	import Parallax from '../components/Parallax.svelte';
 	import './styles.css';
 </script>
 
 <div class="app">
-	<!-- <Parallax /> -->
+	<Parallax />
 	<Header></Header>
 	<main>
 		<slot />
