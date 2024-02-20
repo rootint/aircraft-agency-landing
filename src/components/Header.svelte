@@ -1,6 +1,9 @@
 <script>
 	import { animationComplete } from '../stores';
 	import aircraft from '$lib/assets/aircraft.svg';
+	import { KanbanSquare } from 'lucide-svelte';
+
+	let showIcon = false;
 
 	let showHeader = false;
 	animationComplete.subscribe((value) => {
@@ -18,27 +21,40 @@
 				<a href="/" class="logo">Aircraft</a>
 			</div>
 			<div class="center-nav">
-				<a href="#services">Services</a>
+				<a
+					href="#services"
+					on:mouseenter={() => (showIcon = true)}
+					on:mouseleave={() => (showIcon = false)}
+				>
+					<!-- {#if showIcon}
+						<span class="icon-wrapper">
+							<KanbanSquare color="#9A6FDF" size="16"></KanbanSquare>
+						</span>
+					{:else}
+						<span class="icon-wrapper">
+							<KanbanSquare color="#999" size="16"></KanbanSquare>
+						</span>
+					{/if} -->
+					Services
+				</a>
 				<a href="#benefits">Benefits</a>
 				<a href="#why-us">Why Us</a>
 				<a href="#pricing">Pricing</a>
 				<a href="#faq">FAQ</a>
 			</div>
 			<button class="top-cta" on:click={bookACall}> Book A Call </button>
-			<!-- <ul>
-				<li><a href="#aircraft"><span class="icon">✈️</span> Aircraft</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#benefits">Benefits</a></li>
-				<li><a href="#why-us">Why Us</a></li>
-				<li><a href="#pricing">Pricing</a></li>
-				<li><a href="#faq">FAQ</a></li>
-				<li><a href="#book-call" class="call-action">Book A Call</a></li>
-			</ul> -->
 		</nav>
 	</header>
 {/if}
 
 <style>
+	.icon-wrapper {
+		margin-right: 4px;
+		display: flex;
+		align-items: center;
+		/* opacity: 0;
+		transform: translateX(100%); */
+	}
 	.center-nav {
 		display: flex;
 		align-items: center;
@@ -53,7 +69,21 @@
 	.center-nav > a {
 		font-weight: 500;
 		text-decoration: none;
+		display: flex;
+		align-items: center;
 	}
+
+    .center-nav > a:hover {
+		color: #999;
+	}
+
+	/* .center-nav > a:hover > .icon-wrapper {
+		opacity: 1;
+		transform: translateX(0%);
+		transition:
+			transform 0.4s ease-in,
+			opacity 0.4s ease-in;
+	} */
 
 	button {
 		border-radius: 16px;
@@ -81,11 +111,11 @@
 	@keyframes slideDown {
 		from {
 			transform: translateY(-100%);
-            opacity: 0;
+			opacity: 0;
 		}
 		to {
 			transform: translateY(0);
-            opacity: 1;
+			opacity: 1;
 		}
 	}
 	.top-logo {
