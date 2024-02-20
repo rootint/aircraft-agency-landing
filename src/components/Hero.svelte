@@ -2,11 +2,14 @@
 	import { onMount } from 'svelte';
 	import { animationComplete } from '../stores';
 	import CompanySlider from './CompanySlider.svelte';
+	import aircraft from '../lib/assets/aircraft_.svg';
+    import aircraftBlack from '../lib/assets/aircraft__black.svg';
 
 	let text = 'The only^% agency you will ever^ need_';
 	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
 
-	let index = -8;
+
+    let index = -8;
 	let speed = 75; // Time between letters
 	// let speed = 1; // Time between letters
 
@@ -108,9 +111,11 @@
 					<br />
 				{:else if value === 'waiter'}{:else if value === 'lastunderscore'}
 					<span
-						class="span-symbol {state === 'visible' || state === 'underscore'
-							? 'span-symbol__underscore'
-							: ''}">a</span
+						class="span-symbol {state === 'visible'
+							? 'span-symbol__visible'
+							: state === 'underscore'
+								? 'span-symbol__underscore'
+								: ''}"><img src={aircraftBlack} height="96" style="transform: translateY(31px); margin-left: 7px;"/></span
 					>
 				{/if}
 			{/if}
@@ -155,7 +160,8 @@
 		content: '_';
 		font-family: inherit;
 		position: absolute;
-		color: var(--text);
+		/* color: var(--text); */
+        color: #fff;
 		top: 0;
 		left: 0;
 	}
@@ -167,8 +173,10 @@
 	}
 	span {
 		font-family: 'Space Grotesk', sans-serif;
+		letter-spacing: -3px;
 		margin: 0;
 		padding: 0;
+        color: #fff;
 	}
 	.gradient-wrapper {
 		padding: 4px;
@@ -251,7 +259,7 @@
 	}
 
 	.another-wrapper {
-		background-color: #fff;
+		background-color: #111;
 		border-radius: 28px;
 		padding: 6px;
 		display: inline-block;

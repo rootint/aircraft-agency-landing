@@ -33,7 +33,8 @@
 }
 
 body {
-	background: var(--background-color);
+	/* background: var(--background-color); */
+  background: #111;
 	margin: 0;
 	padding: 0;
 }

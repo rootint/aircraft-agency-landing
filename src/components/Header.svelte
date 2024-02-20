@@ -1,6 +1,7 @@
 <script>
 	import { animationComplete } from '../stores';
 	import aircraft from '$lib/assets/aircraft.svg';
+	import aircraftBlack from '$lib/assets/aircraft_black.svg';
 
 	let showIcon = false;
 
@@ -16,7 +17,7 @@
 	<header>
 		<nav>
 			<div class="top-logo">
-				<img src={aircraft} width="20" height="19" alt="Aircraft Logo" />
+				<img src={aircraftBlack} width="20" height="19" alt="Aircraft Logo" />
 				<a href="/" class="logo">Aircraft</a>
 			</div>
 			<div class="center-nav">
@@ -43,10 +44,10 @@
 		display: flex;
 		align-items: center;
 		border-radius: 16px;
-		border: solid #ddd 1px;
+		border: solid #333 1px;
 		padding: 16px 48px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
-		background-color: #fff;
+		background-color: #141414;
 		gap: 48px;
 	}
 
@@ -55,6 +56,7 @@
 		text-decoration: none;
 		display: flex;
 		align-items: center;
+		color: #fff;
 	}
 
 	.center-nav > a:hover {
@@ -71,16 +73,16 @@
 
 	button {
 		border-radius: 16px;
-		border: solid #ddd 1px;
+		border: solid #333 1px;
 		padding: 16px 32px;
 		display: flex;
 		align-items: center;
-		background-color: #fff;
+		background-color: #111;
 		font-weight: 500;
 		font-size: 16px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
-		color: #111;
+		color: #fff;
 	}
 
 	button:hover {
@@ -120,12 +122,13 @@
 		margin-left: 16px;
 		text-decoration: none;
 		font-size: 16px;
+		color: #fff;
 	}
 
 	@media (max-width: 950px) {
 		.center-nav {
 			padding: 16px 24px;
-            gap: 24px;
+			gap: 24px;
 		}
 	}
 

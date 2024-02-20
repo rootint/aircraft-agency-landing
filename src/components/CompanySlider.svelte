@@ -106,7 +106,6 @@
 		width: 100%;
 		height: 64px;
 		overflow: hidden;
-		background-color: #fff;
 	}
 	.companies-container::before,
 	.companies-container::after {
@@ -121,12 +120,12 @@
 
 	.companies-container::before {
 		left: 0;
-		background: linear-gradient(to right, #fff 0%, transparent 100%);
+		background: linear-gradient(to right, #111 0%, transparent 100%);
 	}
 
 	.companies-container::after {
 		right: 0;
-		background: linear-gradient(to left, #fff 0%, transparent 100%);
+		background: linear-gradient(to left, #111 0%, transparent 100%);
 	}
 	.fade-in-longer {
 		opacity: 0;
