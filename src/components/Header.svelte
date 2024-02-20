@@ -58,7 +58,7 @@
 	.center-nav {
 		display: flex;
 		align-items: center;
-		border-radius: 2px;
+		border-radius: 16px;
 		border: solid #ddd 1px;
 		padding: 16px 48px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
@@ -86,9 +86,9 @@
 	} */
 
 	button {
-		border-radius: 2px;
+		border-radius: 16px;
 		border: solid #ddd 1px;
-		padding: 16px 24px;
+		padding: 16px 32px;
 		display: flex;
 		align-items: center;
 		background-color: #fff;
