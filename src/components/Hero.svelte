@@ -15,17 +15,19 @@
 	import dave from '../lib/assets/dave.png';
 	import tio from '../lib/assets/tio.png';
 
-	let text = 'The only agency you will ever need.';
+	let text = 'The onlyxx agency\nyou will everxx needx_';
 	let displayedText = [];
 	let index = -8;
-	let speed = 50; // Time between letters
+	let speed = 60; // Time between letters
 	// let speed = 1; // Time between letters
 
 	onMount(() => {
 		const interval = setInterval(() => {
 			if (index < text.length + 5) {
 				if (index >= 0 && index < text.length) {
-					displayedText = [...displayedText, { char: text[index], key: Math.random() }];
+					if (text[index] != 'x') {
+						displayedText = [...displayedText, { char: text[index], key: Math.random() }];
+					}
 				}
 				index++;
 			} else {
@@ -37,22 +39,25 @@
 </script>
 
 <section class="hero">
-	<h1 style="margin-top: 24px;">
+	<h1 class="title">
 		{#each displayedText as { char, key } (key)}
-			<span class="fade-in">{char}</span>
+			{#if char == '\n'}
+				<br />
+			{:else}
+				<span class="fade-in">{char}</span>
+			{/if}
 		{/each}
 	</h1>
 
 	{#if index == text.length + 5}
 		<div class="fade-in-longer">
-			<img src={danil} style="position: absolute; top: 200px; left: 200px; height: 34px;" />
-			<img src={dave} style="position: absolute; right: 300px; bottom: 200px; height: 34px;" />
-			<img src={tio} style="position: absolute; top: 150px; right: 200px; height: 34px;" />
+			<!-- <img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
+			<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
+			<img src={tio} style="position: absolute; top: 205px; right: 116px; height: 34px;" /> -->
 		</div>
 		<h2 class="fade-in-longer">
 			Weaving creativity into branding and transforming ideas into exemplary digital experiences.
 		</h2>
-		<div style="height: 48px"></div>
 		<div class="fade-in-longer">
 			<div class="gradient-wrapper">
 				<div class="another-wrapper">
@@ -62,6 +67,7 @@
 				</div>
 			</div>
 		</div>
+		<p style="margin: 0; margin-top: 12px;">5 seats left</p>
 		<div class="companies-container fade-in-longer">
 			<div class="slide-track">
 				<div class="slide">
@@ -123,11 +129,24 @@
 		</div>
 	{:else}
 		<h2 style="color: #fff;">Hi</h2>
-		<div style="height: 126px"></div>
+		<div style="height: 135px;"></div>
+		<p style="margin: 0; margin-top: 12px; color: #fff;">5 seats left</p>
 	{/if}
 </section>
 
 <style>
+	.title {
+		margin: 0;
+		margin-top: 156px;
+		margin-bottom: 48px;
+		font-size: 128px;
+		font-family: 'Space Grotesk', sans-serif;
+		max-width: 1200px;
+		height: 312px;
+	}
+	span {
+		font-family: 'Space Grotesk', sans-serif;
+	}
 	.gradient-wrapper {
 		padding: 2px 2px;
 		background: linear-gradient(
@@ -144,7 +163,7 @@
 			#de4545
 		);
 		background-size: 200% 200%;
-		border-radius: 16px;
+		border-radius: 2px;
 	}
 
 	@media (max-width: 800px) {
@@ -210,20 +229,20 @@
 
 	.another-wrapper {
 		background-color: #fff;
-		border-radius: 13px;
+		border-radius: 1px;
 		height: 100%;
 		width: 100%;
 		padding: 4px;
 	}
 
 	button {
-		padding: 20px 88px;
+		padding: 24px 104px;
 		background-color: #111;
 		font-weight: 500;
-		font-size: 20px;
+		font-size: 24px;
 		color: #fff;
 		border: none;
-		border-radius: 13px;
+		border-radius: 2px;
 		cursor: pointer;
 		text-decoration: none;
 	}
@@ -300,20 +319,19 @@
 		height: 100svh;
 		min-height: -webkit-fill-available;
 	}
-	h1 {
-		font-size: 64px;
-		margin: 0;
-		margin-bottom: 32px;
-	}
 	h2 {
 		color: #777;
-		font-size: 24px;
+		font-size: 32px;
 		font-weight: 500;
+		max-width: 800px;
+		line-height: 140%;
 		margin: 0;
+		margin-bottom: 64px;
 		animation: fadeInAnimation 0.5s forwards;
 	}
 	.fade-in {
-		opacity: 0;
+		opacity: 1;
+		/* opacity: 0; */
 		animation: fadeInAnimation 0.5s forwards;
 	}
 

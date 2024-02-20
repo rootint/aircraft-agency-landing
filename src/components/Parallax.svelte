@@ -6,15 +6,31 @@
 	import circle_circle from '$lib/assets/circle_circle.svg';
 	import circle_dotted from '$lib/assets/circle_dotted.svg';
 	import { onMount } from 'svelte';
+	import danil from '../lib/assets/danil.png';
+	import dave from '../lib/assets/dave.png';
+	import tio from '../lib/assets/tio.png';
+	import { animationComplete } from '../stores';
 
 	onMount(() => {
 		var scene = document.getElementById('scene');
 		var parallaxInstance = new Parallax(scene);
 	});
+
+	let showNames = false;
+	animationComplete.subscribe((value) => {
+		showNames = value;
+	});
 </script>
 
 <div class="parallax">
 	<ul id="scene">
+		<li class="layer" data-depth="0.1">
+			{#if showNames}
+				<img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
+				<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
+				<img src={tio} style="position: absolute; top: 205px; right: 116px; height: 34px;" />
+			{/if}
+		</li>
 		<li class="layer" data-depth="0.6">
 			<img
 				src={cross}
@@ -114,8 +130,8 @@
 	/* Apply the animation to your parallax component */
 	.parallax {
 		animation: fadeIn 5s ease-in;
-        margin: 0;
-        padding: 0;
+		margin: 0;
+		padding: 0;
 	}
 	.circle-circle {
 		animation: rotate 4s linear infinite;
@@ -132,8 +148,8 @@
 	.layer {
 		height: 100%;
 		width: 100%;
-        padding: 0;
-        margin: 0;
+		padding: 0;
+		margin: 0;
 	}
 	.decoration-container {
 		/* position: absolute; */
