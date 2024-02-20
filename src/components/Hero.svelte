@@ -15,7 +15,7 @@
 	import dave from '../lib/assets/dave.png';
 	import tio from '../lib/assets/tio.png';
 
-	let text = 'The onlyxx agency\nyou will everxx needx_';
+	let text = 'The onlyx agency\nyou will everx needx_';
 	let displayedText = [];
 	let index = -8;
 	let speed = 60; // Time between letters
@@ -41,20 +41,14 @@
 <section class="hero">
 	<h1 class="title">
 		{#each displayedText as { char, key } (key)}
-			{#if char == '\n'}
-				<br />
-			{:else}
-				<span class="fade-in">{char}</span>
-			{/if}
+			<span class="fade-in">{char}</span>
 		{/each}
+		{#if index < text.length}
+			<span class="underscore">_</span>
+		{/if}
 	</h1>
 
 	{#if index == text.length + 5}
-		<div class="fade-in-longer">
-			<!-- <img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
-			<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
-			<img src={tio} style="position: absolute; top: 205px; right: 116px; height: 34px;" /> -->
-		</div>
 		<h2 class="fade-in-longer">
 			Weaving creativity into branding and transforming ideas into exemplary digital experiences.
 		</h2>
@@ -135,17 +129,35 @@
 </section>
 
 <style>
+	.underscore {
+		margin: 0;
+		padding: 0;
+	}
+	@keyframes blink {
+		0%,
+		100% {
+			opacity: 0.3;
+		}
+		30% {
+			opacity: 0;
+		}
+	}
+	.blinking {
+		animation: blink 2s step-start 0s infinite;
+	}
 	.title {
 		margin: 0;
 		margin-top: 156px;
 		margin-bottom: 48px;
 		font-size: 128px;
 		font-family: 'Space Grotesk', sans-serif;
-		max-width: 1200px;
+		max-width: 1250px;
 		height: 312px;
 	}
 	span {
 		font-family: 'Space Grotesk', sans-serif;
+		margin: 0;
+		padding: 0;
 	}
 	.gradient-wrapper {
 		padding: 2px 2px;

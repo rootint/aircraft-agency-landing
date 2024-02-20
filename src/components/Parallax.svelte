@@ -26,9 +26,17 @@
 	<ul id="scene">
 		<li class="layer" data-depth="0.1">
 			{#if showNames}
-				<img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
 				<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
+			{/if}
+		</li>
+		<li class="layer" data-depth="0.15">
+			{#if showNames}
 				<img src={tio} style="position: absolute; top: 205px; right: 116px; height: 34px;" />
+			{/if}
+		</li>
+		<li class="layer" data-depth="0.05">
+			{#if showNames}
+				<img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
 			{/if}
 		</li>
 		<li class="layer" data-depth="0.6">
