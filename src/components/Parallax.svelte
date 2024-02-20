@@ -24,7 +24,7 @@
 
 <div class="parallax">
 	<ul id="scene">
-		<li class="layer" data-depth="0.1">
+		<li class="layer" data-depth="-0.1">
 			{#if showNames}
 				<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
 			{/if}

@@ -105,7 +105,8 @@
 
 	header {
 		position: fixed;
-		width: 100%;
+        top: 0;
+		width: calc(100% - 96px - 96px);
 		animation: slideDown 0.5s ease-out forwards;
 	}
 	@keyframes slideDown {
@@ -121,10 +122,9 @@
 	.top-logo {
 		display: flex;
 		align-items: center;
-		background-color: #fff;
 	}
 	nav {
-		padding: 24px 64px;
+		padding: 24px 0px;
 		display: flex;
 		width: 100%;
 		justify-content: space-between;

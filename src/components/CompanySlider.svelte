@@ -1,71 +1,71 @@
 <script>
-	import apexLogo from '../lib/assets/logos/apex_logo.png';
-	import boLogo from '../lib/assets/logos/bo_logo.png';
-	import csLogo from '../lib/assets/logos/cs_logo.png';
-	import learniLogo from '../lib/assets/logos/learni_logo.png';
-	import mfLogo from '../lib/assets/logos/mf_logo.png';
-	import mqLogo from '../lib/assets/logos/mq_logo.png';
-	import nlLogo from '../lib/assets/logos/nl_logo.png';
-	import qsLogo from '../lib/assets/logos/qs_logo.png';
-	import wsLogo from '../lib/assets/logos/ws_logo.png';
+	import apexLogo from '../lib/assets/logos/apex_logo.svg';
+	import boLogo from '../lib/assets/logos/bo_logo.svg';
+	import csLogo from '../lib/assets/logos/cs_logo.svg';
+	import learniLogo from '../lib/assets/logos/learni_logo.svg';
+	import mfLogo from '../lib/assets/logos/mf_logo.svg';
+	import mqLogo from '../lib/assets/logos/mq_logo.svg';
+	import nlLogo from '../lib/assets/logos/nl_logo.svg';
+	import qsLogo from '../lib/assets/logos/qs_logo.svg';
+	import wsLogo from '../lib/assets/logos/ws_logo.svg';
 </script>
 
 <div class="companies-container fade-in-longer">
 	<div class="slide-track">
 		<div class="slide">
-			<img src={apexLogo} alt="Company Logo 1" />
+			<img src={apexLogo} alt="Apex Logo" />
 		</div>
 		<div class="slide">
-			<img src={boLogo} alt="Company Logo 1" />
+			<img src={boLogo} alt="BlueOcean Logo" />
 		</div>
 		<div class="slide">
-			<img src={csLogo} alt="Company Logo 1" />
+			<img src={csLogo} alt="CodeStream Logo" />
 		</div>
 		<div class="slide">
-			<img src={learniLogo} alt="Company Logo 1" />
+			<img src={learniLogo} alt="Learni Logo" />
 		</div>
 		<div class="slide">
-			<img src={mfLogo} alt="Company Logo 1" />
+			<img src={mfLogo} alt="MindFind Logo" />
 		</div>
 		<div class="slide">
-			<img src={mqLogo} alt="Company Logo 1" />
+			<img src={mqLogo} alt="MediQuip Logo" />
 		</div>
 		<div class="slide">
-			<img src={nlLogo} alt="Company Logo 1" />
+			<img src={nlLogo} alt="NeuraLearn Logo" />
 		</div>
 		<div class="slide">
-			<img src={qsLogo} alt="Company Logo 1" />
+			<img src={qsLogo} alt="QuantumScape Logo" />
 		</div>
 		<div class="slide">
-			<img src={wsLogo} alt="Company Logo 1" />
+			<img src={wsLogo} alt="woodstocks Logo" />
 		</div>
 
 		<div class="slide">
-			<img src={apexLogo} alt="Company Logo 1" />
+			<img src={apexLogo} alt="Apex Logo" />
 		</div>
 		<div class="slide">
-			<img src={boLogo} alt="Company Logo 1" />
+			<img src={boLogo} alt="BlueOcean Logo" />
 		</div>
 		<div class="slide">
-			<img src={csLogo} alt="Company Logo 1" />
+			<img src={csLogo} alt="CodeStream Logo" />
 		</div>
 		<div class="slide">
-			<img src={learniLogo} alt="Company Logo 1" />
+			<img src={learniLogo} alt="Learni Logo" />
 		</div>
 		<div class="slide">
-			<img src={mfLogo} alt="Company Logo 1" />
+			<img src={mfLogo} alt="MindFind Logo" />
 		</div>
 		<div class="slide">
-			<img src={mqLogo} alt="Company Logo 1" />
+			<img src={mqLogo} alt="MediQuip Logo" />
 		</div>
 		<div class="slide">
-			<img src={nlLogo} alt="Company Logo 1" />
+			<img src={nlLogo} alt="NeuraLearn Logo" />
 		</div>
 		<div class="slide">
-			<img src={qsLogo} alt="Company Logo 1" />
+			<img src={qsLogo} alt="QuantumScape Logo" />
 		</div>
 		<div class="slide">
-			<img src={wsLogo} alt="Company Logo 1" />
+			<img src={wsLogo} alt="woodstocks Logo" />
 		</div>
 	</div>
 </div>
@@ -74,7 +74,7 @@
 	.slide {
 		width: calc(100% / 9);
 		flex-shrink: 0;
-		height: 64px; /* Adjust height as needed */
+		height: 64px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -83,25 +83,21 @@
 
 	.slide img {
 		max-height: 20px;
-		/* max-height: 100%;
-        max-width: 100%; */
-		object-fit: contain; /* Keeps logo aspect ratio */
-		/* margin-left: 72px; */
+		object-fit: contain;
 	}
 
-	/* Keyframes for the scrolling effect */
 	@keyframes scroll-slide {
 		0% {
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(-100%); /* Moves the track by half its width */
+			transform: translateX(-100%);
 		}
 	}
 	.slide-track {
 		display: flex;
 		width: 100%;
-		animation: scroll-slide 30s linear infinite; /* Adjust time for your needs */
+		animation: scroll-slide 30s linear infinite;
 	}
 	.companies-container {
 		position: absolute;
@@ -118,8 +114,8 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		width: 128px; /* Adjust the width of the fading effect */
-		pointer-events: none; /* Allow click events to pass through */
+		width: 128px;
+		pointer-events: none;
 		z-index: 2;
 	}
 

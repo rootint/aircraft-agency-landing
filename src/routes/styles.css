@@ -3,16 +3,29 @@
 	--bg: #fff;
 	--text-2: #444;
 	--text-bg: #b5b5b5;
-	--desktop-width: 1080px;
+	--desktop-width: 1516px;
 }
 
 * {
 	font-family: 'Inter', sans-serif;
-	color: var(--text-color);
+	color: var(--text);
 	box-sizing: border-box;
-  letter-spacing: -0.05%;
   line-height: 130%;
 }
+
+.app {
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  max-width: var(--desktop-width);
+}
+
+@media (max-width: 800px) {
+	.app {
+		padding: 0 16px;
+	}
+}
+
 
 body {
 	background: var(--background-color);
