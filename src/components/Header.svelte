@@ -1,7 +1,6 @@
 <script>
 	import { animationComplete } from '../stores';
 	import aircraft from '$lib/assets/aircraft.svg';
-	import { KanbanSquare } from 'lucide-svelte';
 
 	let showIcon = false;
 
@@ -21,23 +20,8 @@
 				<a href="/" class="logo">Aircraft</a>
 			</div>
 			<div class="center-nav">
-				<a
-					href="#services"
-					on:mouseenter={() => (showIcon = true)}
-					on:mouseleave={() => (showIcon = false)}
-				>
-					<!-- {#if showIcon}
-						<span class="icon-wrapper">
-							<KanbanSquare color="#9A6FDF" size="16"></KanbanSquare>
-						</span>
-					{:else}
-						<span class="icon-wrapper">
-							<KanbanSquare color="#999" size="16"></KanbanSquare>
-						</span>
-					{/if} -->
-					Services
-				</a>
-				<a href="#benefits">Benefits</a>
+				<a href="#services">Workflow</a>
+				<a href="#benefits">Services</a>
 				<a href="#why-us">Why Us</a>
 				<a href="#pricing">Pricing</a>
 				<a href="#faq">FAQ</a>
@@ -73,7 +57,7 @@
 		align-items: center;
 	}
 
-    .center-nav > a:hover {
+	.center-nav > a:hover {
 		color: #999;
 	}
 
@@ -104,10 +88,13 @@
 	}
 
 	header {
-		position: fixed;
-        top: 0;
-		width: calc(100% - 96px - 96px);
+		position: sticky;
+		top: 0;
+		height: 0;
+		/* max-width: var(--desktop-width);
+		width: 100%; */
 		animation: slideDown 0.5s ease-out forwards;
+		z-index: 100;
 	}
 	@keyframes slideDown {
 		from {
@@ -133,5 +120,18 @@
 		margin-left: 16px;
 		text-decoration: none;
 		font-size: 16px;
+	}
+
+	@media (max-width: 950px) {
+		.center-nav {
+			padding: 16px 24px;
+            gap: 24px;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.center-nav {
+			display: none;
+		}
 	}
 </style>

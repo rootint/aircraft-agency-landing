@@ -72,7 +72,7 @@
 
 <style>
 	.slide {
-		width: calc(100% / 9);
+		width: 160px;
 		flex-shrink: 0;
 		height: 64px;
 		display: flex;
@@ -91,7 +91,7 @@
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(-100%);
+			transform: translateX(-1440px);
 		}
 	}
 	.slide-track {
@@ -127,5 +127,15 @@
 	.companies-container::after {
 		right: 0;
 		background: linear-gradient(to left, #fff 0%, transparent 100%);
+	}
+	.fade-in-longer {
+		opacity: 0;
+		animation: fadeInAnimation 1s forwards;
+	}
+
+	@keyframes fadeInAnimation {
+		to {
+			opacity: 1;
+		}
 	}
 </style>

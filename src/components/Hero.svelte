@@ -4,11 +4,11 @@
 	import CompanySlider from './CompanySlider.svelte';
 
 	let text = 'The only^% agency you will ever^ need_';
-	let displayedText = text.split('').map((char) => keyWrapper(makeMeta(char), Math.random()));
+	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
 
 	let index = -8;
-	let speed = 75; // Time between letters
-	// let speed = 1; // Time between letters
+	// let speed = 75; // Time between letters
+	let speed = 1; // Time between letters
 
 	function Meta() {
 		this.state = 'transparent';
@@ -158,21 +158,6 @@
 		color: var(--text);
 		top: 0;
 		left: 0;
-	}
-
-	.underscore {
-		margin: 0;
-		padding: 0;
-		margin-left: -48px;
-	}
-	@keyframes blink {
-		0%,
-		100% {
-			opacity: 0.3;
-		}
-		30% {
-			opacity: 0;
-		}
 	}
 	.title {
 		margin: 0;

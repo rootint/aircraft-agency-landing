@@ -9,6 +9,8 @@
 	import danil from '../lib/assets/danil.png';
 	import dave from '../lib/assets/dave.png';
 	import tio from '../lib/assets/tio.png';
+	import ai from '../lib/assets/ai.png';
+	import marketing from '../lib/assets/marketing.png';
 	import { animationComplete } from '../stores';
 
 	onMount(() => {
@@ -26,17 +28,47 @@
 	<ul id="scene">
 		<li class="layer" data-depth="-0.1">
 			{#if showNames}
-				<img src={dave} style="position: absolute; right: 380px; bottom: 130px; height: 34px;" />
+				<img
+					src={dave}
+					style="position: absolute; left: 15%; bottom: 12%; height: 34px;"
+					class="parallax"
+				/>
 			{/if}
 		</li>
 		<li class="layer" data-depth="0.15">
 			{#if showNames}
-				<img src={tio} style="position: absolute; top: 205px; right: 116px; height: 34px;" />
+				<img
+					src={tio}
+					style="position: absolute; top: 7%; right: 12%; height: 34px;"
+					class="parallax"
+				/>
 			{/if}
 		</li>
 		<li class="layer" data-depth="0.05">
 			{#if showNames}
-				<img src={danil} style="position: absolute; top: 130px; left: 210px; height: 34px;" />
+				<img
+					src={danil}
+					style="position: absolute; top: 7%; left: 15%; height: 34px;"
+					class="parallax"
+				/>
+			{/if}
+		</li>
+		<li class="layer" data-depth="0.05">
+			{#if showNames}
+				<img
+					src={marketing}
+					style="position: absolute; bottom: 10%; right: 10%; height: 34px;"
+					class="parallax"
+				/>
+			{/if}
+		</li>
+		<li class="layer" data-depth="0.05">
+			{#if showNames}
+				<img
+					src={ai}
+					style="position: absolute; top: 25%; right: 25%; height: 34px;"
+					class="parallax"
+				/>
 			{/if}
 		</li>
 		<li class="layer" data-depth="0.6">
@@ -70,14 +102,14 @@
 			/>
 			<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 10%; right: 5%;" />
 		</li>
-		<li class="layer" data-depth="0.15">
+		<li class="layer" data-depth="-0.15">
 			<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; left: 20%;" />
 			<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; right: 20%;" />
 		</li>
 		<li class="layer" data-depth="0.2">
 			<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 15%; right: 60%;" />
 		</li>
-		<li class="layer" data-depth="0.1">
+		<li class="layer" data-depth="-0.1">
 			<img
 				class="circle-dotted"
 				src={circle_dotted}
@@ -137,7 +169,7 @@
 
 	/* Apply the animation to your parallax component */
 	.parallax {
-		animation: fadeIn 5s ease-in;
+		animation: fadeIn 1s ease-in;
 		margin: 0;
 		padding: 0;
 	}
