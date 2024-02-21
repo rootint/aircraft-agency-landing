@@ -26,19 +26,19 @@
 
 <ul id="scene">
 	{#if showNames}
-		<li class="layer opaque" data-depth="0.1">
+		<li class="layer opaque" data-depth="0.1" invert-x="false" invert-y="false">
 			<img src={dave} style="position: absolute; left: 15%; bottom: 12%; height: 34px;" />
 		</li>
 		<li class="layer opaque" data-depth="0.15">
 			<img src={tio} style="position: absolute; top: 7%; right: 12%; height: 34px;" />
 		</li>
-		<li class="layer opaque" data-depth="0.05">
+		<li class="layer opaque" data-depth="0.07" invert-x="false" invert-y="false">
 			<img src={danil} style="position: absolute; top: 7%; left: 15%; height: 34px;" />
 		</li>
 		<li class="layer opaque" data-depth="0.05">
 			<img src={marketing} style="position: absolute; bottom: 10%; right: 10%; height: 34px;" />
 		</li>
-		<li class="layer opaque" data-depth="0.05">
+		<li class="layer opaque" data-depth="0.05" invert-x="false" invert-y="false">
 			<img src={ai} style="position: absolute; top: 25%; right: 25%; height: 34px;" />
 		</li>
 	{/if}
@@ -73,14 +73,14 @@
 		/>
 		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 10%; right: 5%;" />
 	</li>
-	<li class="layer transparent" data-depth="-0.15">
+	<li class="layer transparent" data-depth="0.15">
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; left: 20%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; right: 20%;" />
 	</li>
 	<li class="layer transparent" data-depth="0.2">
 		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 15%; right: 60%;" />
 	</li>
-	<li class="layer transparent" data-depth="-0.1">
+	<li class="layer transparent" data-depth="0.1">
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -107,7 +107,7 @@
 		animation: fadeIn 1s;
 	}
 	.transparent {
-        opacity: 0.3;
+		opacity: 0.3;
 		animation: almostFadeIn 1s;
 	}
 	@keyframes rotate {
@@ -123,7 +123,7 @@
 		width: 100%;
 		padding: 0;
 		margin: 0;
-        position: absolute;
+		position: absolute;
 	}
 	#scene {
 		position: fixed;
