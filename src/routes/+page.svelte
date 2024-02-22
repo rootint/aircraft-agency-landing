@@ -1,5 +1,14 @@
 <script>
+	import Cta from '../components/CTA.svelte';
+	import Faq from '../components/FAQ.svelte';
+	import Footer from '../components/Footer.svelte';
 	import Hero from '../components/Hero.svelte';
+	import HowThisWorks from '../components/HowThisWorks.svelte';
+	import Pricing from '../components/Pricing.svelte';
+	import SideScrollTitle from '../components/SideScrollTitle.svelte';
+	import Test from '../components/Test.svelte';
+	import WhatWeDo from '../components/WhatWeDo.svelte';
+	import WhyUs from '../components/WhyUs.svelte';
 </script>
 
 <svelte:head>
@@ -15,3 +24,12 @@
 </svelte:head>
 
 <Hero></Hero>
+<HowThisWorks></HowThisWorks>
+<WhatWeDo></WhatWeDo>
+<WhyUs></WhyUs>
+<SideScrollTitle></SideScrollTitle>
+<Pricing></Pricing>
+<Faq></Faq>
+<Cta></Cta>
+<Footer></Footer>
+<!-- <Test></Test> -->

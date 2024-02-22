@@ -2,8 +2,10 @@
 	import { animationComplete } from '../stores';
 	import aircraft from '$lib/assets/aircraft.svg';
 	import aircraftBlack from '$lib/assets/aircraft_black.svg';
+	import { onMount } from 'svelte';
 
 	let showIcon = false;
+	let aircraftOpacity = 1;
 
 	let showHeader = false;
 	animationComplete.subscribe((value) => {
@@ -11,24 +13,40 @@
 	});
 
 	function bookACall() {}
+
+	function handleScroll() {
+		const scrollOffset = 96;
+		aircraftOpacity = Math.max(0, (scrollOffset - window.scrollY) / scrollOffset);
+		console.log(aircraftOpacity);
+	}
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
 {#if showHeader}
 	<header>
-		<nav>
-			<div class="top-logo">
-				<img src={aircraftBlack} width="20" height="19" alt="Aircraft Logo" />
-				<a href="/" class="logo">Aircraft</a>
-			</div>
-			<div class="center-nav">
-				<a href="#services">Workflow</a>
-				<a href="#benefits">Services</a>
-				<a href="#why-us">Why Us</a>
-				<a href="#pricing">Pricing</a>
-				<a href="#faq">FAQ</a>
-			</div>
-			<button class="top-cta" on:click={bookACall}> Book A Call </button>
-		</nav>
+		<div class="width-restriction">
+			<nav>
+				<div class="top-logo" style="opacity: {aircraftOpacity};">
+					<img src={aircraft} width="20" height="19" alt="Aircraft Logo" />
+					<a href="/" class="logo">Aircraft</a>
+				</div>
+				<div class="center-nav">
+					<a href="#services">Workflow</a>
+					<a href="#benefits">Services</a>
+					<a href="#why-us">Why Us</a>
+					<a href="#pricing">Pricing</a>
+					<a href="#faq">FAQ</a>
+				</div>
+				<button class="top-cta" on:click={bookACall}> Book A Call </button>
+			</nav>
+		</div>
 	</header>
 {/if}
 
@@ -44,10 +62,10 @@
 		display: flex;
 		align-items: center;
 		border-radius: 16px;
-		border: solid #333 1px;
+		border: solid #ddd 1px;
 		padding: 16px 48px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
-		background-color: #141414;
+		background-color: #fff;
 		gap: 48px;
 	}
 
@@ -56,7 +74,7 @@
 		text-decoration: none;
 		display: flex;
 		align-items: center;
-		color: #fff;
+		color: #111;
 	}
 
 	.center-nav > a:hover {
@@ -73,16 +91,16 @@
 
 	button {
 		border-radius: 16px;
-		border: solid #333 1px;
+		border: solid #ddd 1px;
 		padding: 16px 32px;
 		display: flex;
 		align-items: center;
-		background-color: #111;
+		background-color: #fff;
 		font-weight: 500;
 		font-size: 16px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
 		cursor: pointer;
-		color: #fff;
+		color: #111;
 	}
 
 	button:hover {
@@ -97,6 +115,7 @@
 		width: 100%; */
 		animation: slideDown 0.5s ease-out forwards;
 		z-index: 100;
+		padding: 0 32px;
 	}
 	@keyframes slideDown {
 		from {
@@ -122,7 +141,7 @@
 		margin-left: 16px;
 		text-decoration: none;
 		font-size: 16px;
-		color: #fff;
+		color: #111;
 	}
 
 	@media (max-width: 950px) {

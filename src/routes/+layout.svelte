@@ -6,7 +6,7 @@
 </script>
 
 <div class="app">
-	<Parallax />
+	<!-- <Parallax /> -->
 	<Header></Header>
 	<main>
 		<slot />

@@ -3,13 +3,12 @@
 	import { animationComplete } from '../stores';
 	import CompanySlider from './CompanySlider.svelte';
 	import aircraft from '../lib/assets/aircraft_.svg';
-    import aircraftBlack from '../lib/assets/aircraft__black.svg';
+	import aircraftBlack from '../lib/assets/aircraft__black.svg';
 
-	let text = 'The only^% agency you will ever^ need_';
+	let text = 'The only^ agency% you will ever^ need_';
 	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
 
-
-    let index = -8;
+	let index = -8;
 	let speed = 75; // Time between letters
 	// let speed = 1; // Time between letters
 
@@ -94,54 +93,73 @@
 	});
 </script>
 
-<section class="hero">
-	<h1 class="title">
-		{#each displayedText as { type, value, state, key } (key)}
-			{#if type === 'symbol'}
-				<span
-					class="span-symbol {state === 'visible'
-						? 'span-symbol__visible'
-						: state === 'underscore'
-							? 'span-symbol__underscore'
-							: ''}">{value}</span
-				>
-			{:else if type === 'special'}
-				<!-- svelte-ignore empty-block -->
-				{#if value === 'endofline'}
-					<br />
-				{:else if value === 'waiter'}{:else if value === 'lastunderscore'}
+<section
+	class="hero {index != text.length + 5 && typeof window != 'undefined' && window.scrollY == 0
+		? 'requires-no-scroll'
+		: ''}"
+>
+	<div class="width-restriction">
+		<h1 class="title">
+			{#each displayedText as { type, value, state, key } (key)}
+				{#if type === 'symbol'}
 					<span
 						class="span-symbol {state === 'visible'
 							? 'span-symbol__visible'
 							: state === 'underscore'
 								? 'span-symbol__underscore'
-								: ''}"><img src={aircraftBlack} height="96" style="transform: translateY(31px); margin-left: 7px;"/></span
+								: ''}">{value}</span
 					>
+				{:else if type === 'special'}
+					<!-- svelte-ignore empty-block -->
+					{#if value === 'endofline'}
+						<br />
+					{:else if value === 'waiter'}{:else if value === 'lastunderscore'}
+						<span
+							class="span-symbol {state === 'visible'
+								? 'span-symbol__visible'
+								: state === 'underscore'
+									? 'span-symbol__underscore'
+									: ''}">_</span
+						>
+					{/if}
 				{/if}
-			{/if}
-		{/each}
-		<!-- {#if index < text.length} -->
-		<!-- <span class="underscore">_</span> -->
-		<!-- {/if} -->
-		{#if index == text.length + 5}
-			<div class="fade-in-longer fs-initial d-inline-block">
-				<div class="gradient-wrapper">
-					<div class="another-wrapper">
-						<a href="#pricing">
-							<button> See Plans </button>
-						</a>
-					</div>
+			{/each}
+			<!-- {#if index < text.length} -->
+			<!-- <span class="underscore">_</span> -->
+			<!-- {/if} -->
+		</h1>
+		<!-- {#if index == text.length + 5} -->
+		<div
+			class="{index == text.length + 5 ? 'fade-in-longer' : ''} fs-initial d-inline-block"
+			style={index == text.length + 5 ? 'opacity: 1;' : 'opacity: 0;'}
+		>
+			<div class="gradient-wrapper">
+				<div class="another-wrapper">
+					<a href="#pricing">
+						<button> See Plans </button>
+					</a>
 				</div>
 			</div>
+		</div>
+		<!-- {/if} -->
+		{#if index == text.length + 5}
+			<CompanySlider></CompanySlider>
 		{/if}
-	</h1>
-
-	{#if index == text.length + 5}
-		<CompanySlider></CompanySlider>
-	{/if}
+	</div>
 </section>
 
 <style>
+	.width-restriction {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+		margin: 0 auto;
+		width: 100%;
+		height: 100vh;
+		min-height: -webkit-fill-available;
+	}
 	.span-symbol {
 		position: relative;
 		opacity: 0;
@@ -160,15 +178,15 @@
 		content: '_';
 		font-family: inherit;
 		position: absolute;
-		/* color: var(--text); */
-        color: #fff;
+		color: var(--text);
+		/* color: #fff; */
 		top: 0;
 		left: 0;
 	}
 	.title {
 		margin: 0;
 		padding: 0;
-		font-size: 172px;
+		font-size: 120px;
 		line-height: 130%;
 	}
 	span {
@@ -176,7 +194,8 @@
 		letter-spacing: -3px;
 		margin: 0;
 		padding: 0;
-        color: #fff;
+		/* color: #fff; */
+		color: #111;
 	}
 	.gradient-wrapper {
 		padding: 4px;
@@ -194,7 +213,8 @@
 			#de4545
 		);
 		background-size: 200% 200%;
-		border-radius: 32px;
+		border-radius: 16px;
+		margin-top: 96px;
 	}
 
 	@media (max-width: 800px) {
@@ -259,8 +279,8 @@
 	}
 
 	.another-wrapper {
-		background-color: #111;
-		border-radius: 28px;
+		background-color: #fff;
+		border-radius: 14px;
 		padding: 6px;
 		display: inline-block;
 	}
@@ -276,25 +296,26 @@
 
 	button {
 		display: inline-block;
-		padding: 32px 140px;
+		padding: 24px 120px;
 		background-color: #111;
-		font-size: 32px;
+		font-size: 24px;
 		color: #fff;
 		border: none;
-		border-radius: 24px;
+		border-radius: 11px;
 		cursor: pointer;
 		text-decoration: none;
 		font-family: 'Space Grotesk', sans-serif;
 	}
 	section.hero {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		justify-content: center;
-		margin: 0;
 		width: 100%;
-		height: 100svh;
+		height: 100vh;
 		min-height: -webkit-fill-available;
+		padding: 0 32px;
 	}
 	.fade-in {
 		opacity: 1;
