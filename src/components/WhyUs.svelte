@@ -108,7 +108,8 @@
 		max-width: 100%;
 	}
 	.left-side > img {
-		height: 80%;
+		max-height: 80%;
+        /* height: 300px; */
 	}
 	/* TODO: make the image smaller */
 	/* .left-side > img {
@@ -199,7 +200,7 @@
 			padding-left: 0px;
 		}
 		.left-side > img {
-			height: 80%;
+			max-height: 80%;
 		}
 	}
 	@media (max-width: 800px) {

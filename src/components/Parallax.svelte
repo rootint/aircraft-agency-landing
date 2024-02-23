@@ -25,29 +25,29 @@
 </script>
 
 <ul id="scene">
-	<li class="layer opaque" data-depth="-0.04" invert-x="false" invert-y="false">
+	<li class="layer" data-depth="-0.04" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={dave} style="position: absolute; left: 10%; top: 88vh; height: 34px;" />
+			<img src={dave} class="opaque" style="position: absolute; left: 10%; top: 88vh; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.015">
+	<li class="layer" data-depth="0.015">
 		{#if showNames}
-			<img src={tio} style="position: absolute; top: 7vh; right: 12%; height: 34px;" />
+			<img src={tio} class="opaque" style="position: absolute; top: 7vh; right: 12%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.007" invert-x="false" invert-y="false">
+	<li class="layer " data-depth="0.007" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={danil} style="position: absolute; top: 8.5vh; left: 15%; height: 34px;" />
+			<img src={danil} class="opaque" style="position: absolute; top: 8.5vh; left: 15%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="-0.005">
+	<li class="layer" data-depth="-0.005">
 		{#if showNames}
-			<img src={marketing} style="position: absolute; top: 85vh; right: 10%; height: 34px;" />
+			<img src={marketing} class="opaque" style="position: absolute; top: 85vh; right: 10%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.005" invert-x="false" invert-y="false">
+	<li class="layer" data-depth="0.005" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={ai} style="position: absolute; top: 25vh; right: 25%; height: 34px;" />
+			<img src={ai} class="opaque" style="position: absolute; top: 25vh; right: 25%; height: 34px;" />
 		{/if}
 	</li>
 	<li class="layer hide-mobile" data-depth="-0.015">
@@ -306,7 +306,7 @@
 
 <style>
 	.opaque {
-		animation: fadeIn 1s;
+		animation: fadeIn 1s ease;
 	}
 	.transparent {
 		opacity: 1;

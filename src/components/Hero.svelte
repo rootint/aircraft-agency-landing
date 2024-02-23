@@ -10,7 +10,7 @@
 
 	let index = -8;
 	let speed = 75; // Time between letters
-	// let speed = 1; // Time between letters
+	// let speed = 20; // Time between letters
 
 	function Meta() {
 		this.state = 'transparent';
@@ -385,6 +385,9 @@
 	}
 
 	@keyframes fadeInAnimation {
+        from {
+            opacity: 0;
+        }
 		to {
 			opacity: 1;
 		}
