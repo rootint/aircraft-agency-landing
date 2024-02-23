@@ -142,6 +142,7 @@
 		flex-direction: column;
 		padding: 32px;
 		border: 1px #ddd solid;
+        background-color: #fff;
 		border-radius: 16px;
 		margin-bottom: 24px;
 		flex: 1;

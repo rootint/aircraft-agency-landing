@@ -1,6 +1,7 @@
 <script>
 	import aircraft from '../lib/assets/aircraft.svg';
 	import { inview } from 'svelte-inview';
+	import Modal from './Modal.svelte';
 	let seatsLeft = 5;
 	let isTitleInView, isPricingInView;
 	const options = {
@@ -38,7 +39,8 @@
 						>/month</span
 					>
 				</p>
-				<button class="active">Get Started Now</button>
+				<!-- <button class="active">Get Started Now</button> -->
+				<Modal buttonType="pricing"></Modal>
 				<div class="option-container">
 					<img src={aircraft} class="list-marker" alt="Just a marker for the list" />
 					<p class="option-text">
@@ -224,6 +226,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 32px;
+		background-color: #fff;
 		border: 1px #ddd solid;
 		border-radius: 16px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
@@ -273,7 +276,7 @@
 		}
 		.option-text {
 			font-size: 16px;
-            margin-left: 12px;
+			margin-left: 12px;
 		}
 	}
 </style>

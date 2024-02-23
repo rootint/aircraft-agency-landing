@@ -1,5 +1,11 @@
 <script>
+	import cross from '$lib/assets/cross.svg';
+	import circle_dotted from '$lib/assets/circle_dotted.svg';
+	import danil from '../lib/assets/danil.png';
+	import dave from '../lib/assets/dave.png';
+	import tio from '../lib/assets/tio.png';
 	import { inview } from 'svelte-inview';
+	import Modal from './Modal.svelte';
 
 	let text = 'Start a new project^ with% us in just^ a few clicks_';
 	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
@@ -124,9 +130,6 @@
 					{/if}
 				{/if}
 			{/each}
-			<!-- {#if index < text.length} -->
-			<!-- <span class="underscore">_</span> -->
-			<!-- {/if} -->
 		</h2>
 		<p
 			class="subtitle {index == text.length + 5 ? 'fade-in' : ''}"
@@ -140,7 +143,7 @@
 				style={index == text.length + 5 ? 'visibility: visible;' : 'visibility: hidden;'}
 			>
 				<div class="another-wrapper">
-					<button> Book A Call </button>
+                    <Modal buttonType="cta"></Modal>
 				</div>
 			</div>
 		</div>
@@ -148,6 +151,12 @@
 </section>
 
 <style>
+	.decor-container {
+		width: 100%;
+		background-color: #8347de;
+		position: absolute;
+		overflow: hidden;
+	}
 	.span-symbol {
 		position: relative;
 		opacity: 0;
@@ -207,6 +216,7 @@
 		margin: 0;
 		margin-top: 64px;
 		background-color: #111;
+		z-index: -10;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;

@@ -252,7 +252,8 @@
 
 	@media (max-width: 800px) {
 		.gradient-wrapper {
-			margin-top: 16px;
+            display: flex;
+			margin-top: 32px;
 			width: 100%;
 		}
 	}
@@ -358,7 +359,19 @@
 	@media (max-width: 800px) {
 		section.hero {
 			padding: 0 16px;
+            height: unset;
 		}
+		.title {
+			font-size: 64px;
+		}
+		span {
+			letter-spacing: 0px;
+		}
+        button {
+            padding: 16px 0;
+            font-size: 20px;
+            width: 100%;
+        }
 	}
 	.fade-in {
 		opacity: 1;

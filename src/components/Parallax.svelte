@@ -1,10 +1,10 @@
 <script>
 	import cross from '$lib/assets/cross.svg';
+	import circle_dotted from '$lib/assets/circle_dotted.svg';
 	import plus from '$lib/assets/plus.svg';
 	import triangle from '$lib/assets/triangle.svg';
 	import plus_cross_cross from '$lib/assets/plus_cross_cross.svg';
 	import circle_circle from '$lib/assets/circle_circle.svg';
-	import circle_dotted from '$lib/assets/circle_dotted.svg';
 	import { onMount } from 'svelte';
 	import danil from '../lib/assets/danil.png';
 	import dave from '../lib/assets/dave.png';
@@ -103,7 +103,6 @@
 			alt="Circle Dotted"
 		/>
 		<img
-			class="circle-dotted"
 			src={circle_dotted}
 			style="position: absolute; left: 35%; top: -99px"
 			alt="Circle Dotted"
@@ -111,20 +110,200 @@
 	</li>
 
 	<li class="layer transparent" data-depth="-0.04">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 125vh; left: 5%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 135vh; left: 17%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 200vh; left: 10%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 149vh; right: 50%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 150vh; right: 5%;" />
 		<img
-			src={cross}
-			class="cross"
-			alt="Parallax Cross"
-			style="position: absolute; top: 125vh; left: 5%;"
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 50%; top: 180vh;"
+			alt="Circle Dotted"
 		/>
-		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 5%; left: 10%;" />
+	</li>
+	<li class="layer transparent" data-depth="0.05">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 170vh; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 180vh; right: 40%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 200vh; right: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 230vh; left: 13%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 240vh; left: 54%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 250vh; left: 30%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 270vh; left: 84%;" />
 		<img
-			src={cross}
-			class="cross"
-			alt="Parallax Cross"
-			style="position: absolute; top: 149vh; right: 10%;"
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: -50px; top: 200vh;"
+			alt="Circle Dotted"
 		/>
-		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 90vh; right: 5%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 300vh; left: 12%;" />
+	</li>
+	<li class="layer transparent" data-depth="0.06">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 280vh; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 290vh; right: 40%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 310vh; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 320vh; left: 13%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 330vh; left: 54%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 340vh; right: 30%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; right: -50px; top: 300vh;"
+			alt="Circle Dotted"
+		/>
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 350vh; left: 84%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 360vh; right: 12%;" />
+	</li>
+	<li class="layer transparent" data-depth="0.08">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 370vh; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 380vh; right: 40%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 390vh; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 400vh; left: 45%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 410vh; left: 11%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 420vh; right: 23%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 430vh; left: 67%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 35%; top: 400vh;"
+			alt="Circle Dotted"
+		/>
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 440vh; right: 53%;" />
+	</li>
+	<li class="layer transparent" data-depth="-0.08">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 450vh; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 460vh; right: 40%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 470vh; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 480vh; left: 45%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 490vh; left: 11%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 500vh; right: 23%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 510vh; left: 67%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 520vh; right: 53%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; right: 35%; top: 500vh;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="-0.08">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 530vh; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 540vh; right: 40%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 550vh; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 560vh; left: 45%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 570vh; left: 11%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 580vh; right: 23%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 590vh; left: 67%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 600vh; right: 53%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 35%; top: 600vh;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="-0.08">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 51%; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 52%; right: 50%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 53%; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 55%; left: 55%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 55%; left: 11%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 56%; right: 23%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 57%; left: 67%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 58%; right: 53%;" />
+        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 59%; right: 13%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 35%; top: 55%;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="0.1">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 61%; left: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 62%; right: 60%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 63%; left: 6%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 64%; left: 66%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 65%; left: 11%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 66%; right: 23%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 67%; left: 67%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 68%; right: 63%;" />
+        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 69%; left: 1%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 1%; top: 63%;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="0.07">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 71%; left: 89%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 72%; right: 53%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 73%; left: 88%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 74%; left: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 75%; left: 64%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 76%; right: 12%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 77%; left: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 78%; right: 11%;" />
+        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 79%; right: 15%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 1%; top: 73%;"
+			alt="Circle Dotted"
+		/>
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; right: 1%; top: 76%;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="0.04">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 81%; left: 89%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 82%; right: 53%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 83%; left: 88%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 84%; right: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 85%; right: 64%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 86%; right: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 87%; left: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 88%; right: 11%;" />
+        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 89%; right: 51%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 3%; top: 83%;"
+			alt="Circle Dotted"
+		/>
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; right: 13%; top: 81%;"
+			alt="Circle Dotted"
+		/>
+	</li>
+	<li class="layer transparent" data-depth="0.04">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 91%; left: 89%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 92%; right: 53%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 93%; left: 88%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 94%; right: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 95%; right: 64%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 96%; right: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 97%; left: 32%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 98%; right: 11%;" />
+        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 99%; left: 11%;" />
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; left: 3%; top: 93%;"
+			alt="Circle Dotted"
+		/>
+		<img
+			class="circle-dotted"
+			src={circle_dotted}
+			style="position: absolute; right: 13%; top: 99%;"
+			alt="Circle Dotted"
+		/>
 	</li>
 </ul>
 
@@ -154,7 +333,7 @@
 	#scene {
 		position: absolute;
 		height: 100%;
-		width: 100vw;
+		width: 100%;
 		top: 0;
 		left: 0;
 		overflow: hidden;

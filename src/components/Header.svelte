@@ -3,6 +3,8 @@
 	import aircraft from '$lib/assets/aircraft.svg';
 	import aircraftBlack from '$lib/assets/aircraft_black.svg';
 	import { onMount } from 'svelte';
+	import { Phone } from 'lucide-svelte';
+	import Modal from './Modal.svelte';
 
 	let showIcon = false;
 	let aircraftOpacity = 1;
@@ -44,18 +46,26 @@
 						>Services</a
 					>
 					<a href="#why-us" style={currentVisible == 'why-us' ? 'color: #FF6B75;' : ''}>Why Us</a>
-					<a href="#pricing" style={currentVisible == 'pricing' ? 'color: #5593E9;' : ''}
-						>Pricing</a
+					<a href="#pricing" style={currentVisible == 'pricing' ? 'color: #5593E9;' : ''}>Pricing</a
 					>
 					<a href="#faq" style={currentVisible == 'faq' ? 'color: #F9AC6D;' : ''}>FAQ</a>
 				</div>
-				<button class="top-cta" on:click={bookACall}> Book A Call </button>
+				<div class="top-cta">
+					<Modal buttonType="top"></Modal>
+				</div>
+				<button class="top-cta-mobile" on:click={bookACall}> <Phone></Phone> </button>
 			</nav>
 		</div>
 	</header>
 {/if}
 
 <style>
+	a {
+		text-decoration: none;
+	}
+	.top-cta-mobile {
+		display: none;
+	}
 	.icon-wrapper {
 		margin-right: 4px;
 		display: flex;
@@ -149,16 +159,38 @@
 		color: #111;
 	}
 
-	@media (max-width: 950px) {
+	@media (max-width: 1200px) {
 		.center-nav {
 			padding: 16px 24px;
 			gap: 24px;
+		}
+		header {
+			padding: 0 24px;
 		}
 	}
 
 	@media (max-width: 800px) {
 		.center-nav {
 			display: none;
+		}
+		header {
+			padding: 0 16px;
+		}
+		.top-cta {
+			display: none;
+		}
+		.top-cta-mobile {
+			border-radius: 8px;
+			border: solid #ddd 1px;
+			padding: 16px;
+			display: flex;
+			align-items: center;
+			background-color: #fff;
+			font-weight: 500;
+			font-size: 16px;
+			box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+			cursor: pointer;
+			color: #111;
 		}
 	}
 </style>
