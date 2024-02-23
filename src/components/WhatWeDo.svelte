@@ -317,6 +317,9 @@
 		}
 	}
 	@media (max-width: 800px) {
+        h3 {
+            margin-bottom: 32px;
+        }
 		.wwd-container {
 			padding: 24px 16px;
 		}

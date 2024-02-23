@@ -222,7 +222,7 @@
 		justify-content: center;
 	}
 	.pricing-card {
-		margin-top: 64px;
+		margin-top: 48px;
 		display: flex;
 		flex-direction: column;
 		padding: 32px;
@@ -248,10 +248,6 @@
 		.pricing-row {
 			display: flex;
 			gap: 48px;
-			flex-direction: column;
-			width: 100%;
-            justify-content: center;
-            align-items: center;
 		}
 		.pricing-card {
 			padding: 24px;
@@ -274,6 +270,7 @@
 			width: 100%;
 			max-width: none;
 			padding: 24px;
+            margin-top: 32px;
 		}
 		.whyus-container {
 			padding: 0 16px;

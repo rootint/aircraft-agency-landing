@@ -91,7 +91,7 @@
 
 <style>
 	.whyus-container {
-		margin-bottom: 64px;
+		margin-bottom: 32px;
 		padding: 64px 32px;
 	}
 	.width-restriction {
@@ -165,7 +165,7 @@
 		grid-template-columns: repeat(3, 1fr);
 	}
 	h3 {
-		margin-bottom: 64px;
+		margin-bottom: 48px;
 	}
 
 	@media (max-width: 1200px) {

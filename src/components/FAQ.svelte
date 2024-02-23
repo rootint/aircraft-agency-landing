@@ -28,7 +28,7 @@
 		>
 			<span class="title-number">4.</span> FAQ
 		</h2>
-		<h3 style="margin-bottom: 40px;" class={isTitleInView ? 'fade-in' : ''}>
+		<h3 class={isTitleInView ? 'fade-in' : ''}>
 			Questions on Your Mind? Find Clarity Here
 		</h3>
 		<div
@@ -119,6 +119,9 @@
 </section>
 
 <style>
+    h3 {
+        margin-bottom: 48px;
+    }
     .icon {
         margin-right: 12px;
     }
@@ -196,12 +199,14 @@
 			flex-direction: column;
 			padding: 16px;
 			border: 1px #ddd solid;
-			border-radius: 8px;
 			margin-bottom: 16px;
 			flex: 1;
 		}
         .icon {
             display: none;
+        }
+        h3 {
+            margin-bottom: 32px;
         }
 	}
 </style>
