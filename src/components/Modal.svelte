@@ -314,7 +314,7 @@
 		}
 		.modal {
 			width: 100wv;
-			height: 100vh;
+			height: 100svh;
 		}
 		.modal-content {
             margin: 16px;
