@@ -138,7 +138,7 @@
 		font-size: 24px;
 		font-family: 'Space Grotesk', sans-serif;
 		margin: 0;
-		margin-top: 2px;
+		margin-bottom: 2px;
 		/* margin-bottom:  */
 	}
 	p {
