@@ -136,20 +136,20 @@
 		position: absolute;
 		z-index: 2;
 		overflow: hidden;
-        pointer-events: none;
+		pointer-events: none;
 	}
 	#devCss {
 		position: absolute;
 		top: 16px;
 		left: 0;
-        pointer-events: none;
+		pointer-events: none;
 	}
 	#devSvelte {
 		position: absolute;
 		top: 0;
 		right: 0;
 		height: 100%;
-        pointer-events: none;
+		pointer-events: none;
 	}
 	#cursorDesign {
 		position: absolute;
@@ -162,7 +162,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-        pointer-events: none;
+		pointer-events: none;
 		z-index: 1;
 	}
 	#designMobile {
@@ -170,7 +170,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-        pointer-events: none;
+		pointer-events: none;
 		z-index: 2;
 	}
 	.canvas {
@@ -329,6 +329,22 @@
 		.bento-grid {
 			display: flex;
 			flex-direction: column;
+		}
+		#brandingRight {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			pointer-events: none;
+			z-index: 2;
+            height: 128px;
+		}
+		#brandingLeft {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			pointer-events: none;
+			z-index: 3;
+            height: 128px;
 		}
 	}
 </style>

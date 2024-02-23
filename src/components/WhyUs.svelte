@@ -145,8 +145,8 @@
 		grid-column: 2 / 4;
 		display: flex;
 		justify-content: space-between;
-        align-items: start;
-        width: 100%;
+		align-items: start;
+		width: 100%;
 	}
 	.grid-element {
 		padding: 32px;
@@ -165,35 +165,6 @@
 	}
 	h3 {
 		margin-bottom: 64px;
-	}
-
-	@media (max-width: 800px) {
-		.bento-grid {
-			display: flex;
-			flex-direction: column;
-		}
-		.right-side,
-		.left-side {
-			width: 100%;
-		}
-		.satisfaction {
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.whyus-container {
-			margin-bottom: 32px;
-			padding: 32px 16px;
-		}
-		h3 {
-			margin-bottom: 32px;
-		}
-		.grid-element {
-			padding: 16px;
-		}
-		.left-side {
-			padding-left: 0px;
-		}
 	}
 
 	@media (max-width: 1200px) {
@@ -229,6 +200,34 @@
 		}
 		.left-side > img {
 			height: 80%;
+		}
+	}
+	@media (max-width: 800px) {
+		.bento-grid {
+			display: flex;
+			flex-direction: column;
+		}
+		.right-side,
+		.left-side {
+			width: 100%;
+		}
+		.satisfaction {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.whyus-container {
+			margin-bottom: 32px;
+			padding: 32px 16px;
+		}
+		h3 {
+			margin-bottom: 32px;
+		}
+		.grid-element {
+			padding: 16px;
+		}
+		.left-side {
+			padding-left: 0px;
 		}
 	}
 </style>

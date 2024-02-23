@@ -53,7 +53,10 @@
 				<div class="top-cta">
 					<Modal buttonType="top"></Modal>
 				</div>
-				<button class="top-cta-mobile" on:click={bookACall}> <Phone></Phone> </button>
+				<div class="top-cta-mobile">
+					<Modal buttonType="top-mobile"></Modal>
+				</div>
+				<!-- <button class="top-cta-mobile" on:click={bookACall}> <Phone></Phone> </button> -->
 			</nav>
 		</div>
 	</header>
@@ -180,17 +183,7 @@
 			display: none;
 		}
 		.top-cta-mobile {
-			border-radius: 8px;
-			border: solid #ddd 1px;
-			padding: 16px;
 			display: flex;
-			align-items: center;
-			background-color: #fff;
-			font-weight: 500;
-			font-size: 16px;
-			box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
-			cursor: pointer;
-			color: #111;
 		}
 	}
 </style>

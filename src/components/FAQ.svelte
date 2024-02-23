@@ -37,7 +37,9 @@
 			class="question-container {isRow1InView ? 'fade-in' : ''}"
 		>
 			<div class="title-container">
-				<HelpCircle></HelpCircle>
+				<span class="icon">
+					<HelpCircle></HelpCircle>
+				</span>
 				<h4>How does the pause feature work?</h4>
 			</div>
 			<p>
@@ -57,7 +59,9 @@
 			class="question-container {isRow2InView ? 'fade-in' : ''}"
 		>
 			<div class="title-container">
-				<HelpCircle></HelpCircle>
+				<span class="icon">
+					<HelpCircle></HelpCircle>
+				</span>
 				<h4>Why wouldn't I just hire a full-time designer or full time developer?</h4>
 			</div>
 			<p>
@@ -81,7 +85,9 @@
 				class="question-container {isRow3InView ? 'fade-in' : ''}"
 			>
 				<div class="title-container">
-					<HelpCircle></HelpCircle>
+					<span class="icon">
+						<HelpCircle></HelpCircle>
+					</span>
 					<h4>What if I only have a single request?</h4>
 				</div>
 				<p>
@@ -96,7 +102,9 @@
 				class="question-container {isRow3InView ? 'fade-in' : ''}"
 			>
 				<div class="title-container">
-					<HelpCircle></HelpCircle>
+					<span class="icon">
+						<HelpCircle></HelpCircle>
+					</span>
 					<h4>How much work would I receive in a month?</h4>
 				</div>
 				<p>
@@ -111,6 +119,9 @@
 </section>
 
 <style>
+    .icon {
+        margin-right: 12px;
+    }
 	.width-restriction {
 		display: flex;
 		flex-direction: column;
@@ -129,7 +140,6 @@
 		margin: 0;
 		margin-top: 2px;
 		/* margin-bottom:  */
-		margin-left: 12px;
 	}
 	p {
 		margin: 0;
@@ -142,7 +152,7 @@
 		flex-direction: column;
 		padding: 32px;
 		border: 1px #ddd solid;
-        background-color: #fff;
+		background-color: #fff;
 		border-radius: 16px;
 		margin-bottom: 24px;
 		flex: 1;
@@ -190,5 +200,8 @@
 			margin-bottom: 16px;
 			flex: 1;
 		}
+        .icon {
+            display: none;
+        }
 	}
 </style>

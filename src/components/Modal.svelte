@@ -1,4 +1,5 @@
 <script>
+	import { Phone } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 
 	export let buttonType;
@@ -70,6 +71,12 @@
 		<div class="another-wrapper">
 			<button class="top" on:click={() => (showModal = true)}>Book A Call</button>
 		</div>
+	</div>
+{:else if buttonType == 'top-mobile'}
+	<div class="gradient-wrapper">
+		<!-- <div class="another-wrapper"> -->
+		<button class="top mobile" on:click={() => (showModal = true)}><Phone style="margin: 0;"></Phone></button>
+		<!-- </div> -->
 	</div>
 {:else if buttonType == 'pricing'}
 	<button class="active" on:click={() => (showModal = true)}>Get Started Now</button>
@@ -151,6 +158,19 @@
 {/if}
 
 <style>
+	.top-cta-mobile {
+		border-radius: 8px;
+		border: solid #ddd 1px;
+		padding: 16px;
+		display: flex;
+		align-items: center;
+		background-color: #fff;
+		font-weight: 500;
+		font-size: 16px;
+		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		cursor: pointer;
+		color: #111;
+	}
 	.cta {
 		display: inline-block;
 		padding: 24px 120px;
@@ -162,6 +182,8 @@
 		cursor: pointer;
 		text-decoration: none;
 		font-family: 'Space Grotesk', sans-serif;
+		/* z-index: 999;
+        position: relative;  */
 	}
 
 	@media (max-width: 1200px) {
@@ -291,17 +313,27 @@
 			height: unset;
 		}
 		.modal {
-			position: relative;
-			background-color: #fff;
-			z-index: 3;
+			width: 100wv;
+			height: 100vh;
 		}
 		.modal-content {
+            margin: 16px;
+			height: calc(100vh - 16px);
+			padding: 16px;
+			overflow: scroll;
+		}
+		/* .modal {
+			position: absolute;
+			background-color: #fff;
+			z-index: 3; */
+		/* } */
+		/* .modal-content {
 			background: none;
 			padding: 16px;
 			border-radius: 0px;
 			box-shadow: none;
 			width: 100%;
-		}
+		} */
 	}
 
 	.email-input:focus {
@@ -334,7 +366,6 @@
 
 	@media (max-width: 800px) {
 		.gradient-wrapper {
-			margin-top: 16px;
 			width: 100%;
 		}
 	}
@@ -415,6 +446,18 @@
 		color: #111;
 		border: none;
 		border-radius: 15px;
+		/* margin-left: 10px; */
+		cursor: pointer;
+	}
+    .mobile {
+		padding: 16px;
+        padding-bottom: 12px;
+		background: #fff;
+		font-weight: 500;
+		width: 100%;
+		border: none;
+		border-radius: 15px;
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
 		/* margin-left: 10px; */
 		cursor: pointer;
 	}

@@ -324,7 +324,7 @@
 			padding: 0 24px;
 		}
 	}
-	@media (max-width: 1200px) {
+	@media (max-width: 800px) {
 		.htw-container {
 			padding: 0 16px;
 		}
@@ -339,7 +339,7 @@
 		}
 		.section-title {
 			margin: 0;
-			margin-bottom: 32px;
+			margin-bottom: 16px;
 			font-size: 20px;
 			color: #111;
 			font-family: 'Space Grotesk', sans-serif;

@@ -216,7 +216,7 @@
 		margin: 0;
 		margin-top: 64px;
 		background-color: #111;
-		z-index: -10;
+		/* z-index: -10; */
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -225,6 +225,7 @@
 		/* position: absolute; */
 		box-sizing: border-box;
 		overflow: hidden;
+        position: relative;
 	}
 	.gradient-wrapper {
 		padding: 4px;

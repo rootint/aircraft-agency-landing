@@ -37,18 +37,27 @@
 	</li>
 	<li class="layer opaque" data-depth="0.007" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={danil} style="position: absolute; top: 7vh; left: 15%; height: 34px;" />
+			<img src={danil} style="position: absolute; top: 8.5vh; left: 15%; height: 34px;" />
 		{/if}
 	</li>
 	<li class="layer opaque" data-depth="-0.005">
 		{#if showNames}
-			<img src={marketing} style="position: absolute; top: 90vh; right: 10%; height: 34px;" />
+			<img src={marketing} style="position: absolute; top: 85vh; right: 10%; height: 34px;" />
 		{/if}
 	</li>
 	<li class="layer opaque" data-depth="0.005" invert-x="false" invert-y="false">
 		{#if showNames}
 			<img src={ai} style="position: absolute; top: 25vh; right: 25%; height: 34px;" />
 		{/if}
+	</li>
+	<li class="layer hide-mobile" data-depth="-0.015">
+		<img src={danil} class="hide-mobile" style="position: absolute; bottom: 20vh; right: 10%; height: 34px;" />
+	</li>
+	<li class="layer hide-mobile" data-depth="0.02">
+		<img src={tio} class="hide-mobile" style="position: absolute; bottom: 40vh; right: 30%; height: 34px;" />
+	</li>
+	<li class="layer hide-mobile" data-depth="0.02">
+		<img src={dave} class="hide-mobile" style="position: absolute; bottom: 50vh; right: 15%; height: 34px;" />
 	</li>
 
 	<li class="layer transparent" data-depth="0.06">
@@ -211,7 +220,7 @@
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 56%; right: 23%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 57%; left: 67%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 58%; right: 53%;" />
-        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 59%; right: 13%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 59%; right: 13%;" />
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -228,7 +237,7 @@
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 66%; right: 23%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 67%; left: 67%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 68%; right: 63%;" />
-        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 69%; left: 1%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 69%; left: 1%;" />
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -245,7 +254,7 @@
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 76%; right: 12%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 77%; left: 32%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 78%; right: 11%;" />
-        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 79%; right: 15%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 79%; right: 15%;" />
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -268,7 +277,7 @@
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 86%; right: 32%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 87%; left: 32%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 88%; right: 11%;" />
-        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 89%; right: 51%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 89%; right: 51%;" />
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -291,19 +300,7 @@
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 96%; right: 32%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 97%; left: 32%;" />
 		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 98%; right: 11%;" />
-        <img src={cross} alt="Parallax Cross" style="position: absolute; top: 99%; left: 11%;" />
-		<img
-			class="circle-dotted"
-			src={circle_dotted}
-			style="position: absolute; left: 3%; top: 93%;"
-			alt="Circle Dotted"
-		/>
-		<img
-			class="circle-dotted"
-			src={circle_dotted}
-			style="position: absolute; right: 13%; top: 99%;"
-			alt="Circle Dotted"
-		/>
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 99%; left: 11%;" />
 	</li>
 </ul>
 
@@ -355,6 +352,11 @@
 		}
 		to {
 			opacity: 1;
+		}
+	}
+	@media (max-width: 800px) {
+		.hide-mobile {
+			display: none;
 		}
 	}
 </style>
