@@ -123,3 +123,37 @@ h3 {
 		line-height: 140%;
 	}
 }
+.fade-in {
+	animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+	0% {
+		opacity: 0;
+		transform: translateY(70px);
+	}
+	80% {
+		opacity: 1; /* Opacity reaches 1 more quickly */
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes scaleUp {
+	0% {
+		scale: 1;
+	}
+	100% {
+		scale: 1.05;
+	}
+}
+
+@keyframes scaleDown {
+	0% {
+		scale: 1;
+	}
+	100% {
+		scale: 1.05;
+	}
+}

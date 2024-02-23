@@ -6,7 +6,6 @@
 	import HowThisWorks from '../components/HowThisWorks.svelte';
 	import Pricing from '../components/Pricing.svelte';
 	import SideScrollTitle from '../components/SideScrollTitle.svelte';
-	import Test from '../components/Test.svelte';
 	import WhatWeDo from '../components/WhatWeDo.svelte';
 	import WhyUs from '../components/WhyUs.svelte';
 </script>
@@ -32,4 +31,3 @@
 <Faq></Faq>
 <Cta></Cta>
 <Footer></Footer>
-<!-- <Test></Test> -->

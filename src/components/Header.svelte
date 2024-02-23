@@ -1,5 +1,5 @@
 <script>
-	import { animationComplete } from '../stores';
+	import { animationComplete, currentVisible } from '../stores';
 	import aircraft from '$lib/assets/aircraft.svg';
 	import aircraftBlack from '$lib/assets/aircraft_black.svg';
 	import { onMount } from 'svelte';
@@ -37,11 +37,17 @@
 					<a href="/" class="logo">Aircraft</a>
 				</div>
 				<div class="center-nav">
-					<a href="#services">Workflow</a>
-					<a href="#benefits">Services</a>
-					<a href="#why-us">Why Us</a>
-					<a href="#pricing">Pricing</a>
-					<a href="#faq">FAQ</a>
+					<a href="#services" style={currentVisible == 'services' ? 'color: #9A6FDF;' : ''}
+						>Workflow</a
+					>
+					<a href="#benefits" style={currentVisible == 'benefits' ? 'color: #E072CC;' : ''}
+						>Services</a
+					>
+					<a href="#why-us" style={currentVisible == 'why-us' ? 'color: #FF6B75;' : ''}>Why Us</a>
+					<a href="#pricing" style={currentVisible == 'pricing' ? 'color: #5593E9;' : ''}
+						>Pricing</a
+					>
+					<a href="#faq" style={currentVisible == 'faq' ? 'color: #F9AC6D;' : ''}>FAQ</a>
 				</div>
 				<button class="top-cta" on:click={bookACall}> Book A Call </button>
 			</nav>

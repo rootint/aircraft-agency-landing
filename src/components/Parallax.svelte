@@ -25,71 +25,71 @@
 </script>
 
 <ul id="scene">
-	<li class="layer opaque" data-depth="-0.1" invert-x="false" invert-y="false">
+	<li class="layer opaque" data-depth="-0.04" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={dave} style="position: absolute; left: 15%; bottom: 12%; height: 34px;" />
+			<img src={dave} style="position: absolute; left: 10%; top: 88vh; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.15">
+	<li class="layer opaque" data-depth="0.015">
 		{#if showNames}
-			<img src={tio} style="position: absolute; top: 7%; right: 12%; height: 34px;" />
+			<img src={tio} style="position: absolute; top: 7vh; right: 12%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.07" invert-x="false" invert-y="false">
+	<li class="layer opaque" data-depth="0.007" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={danil} style="position: absolute; top: 7%; left: 15%; height: 34px;" />
+			<img src={danil} style="position: absolute; top: 7vh; left: 15%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="-0.05">
+	<li class="layer opaque" data-depth="-0.005">
 		{#if showNames}
-			<img src={marketing} style="position: absolute; bottom: 10%; right: 10%; height: 34px;" />
+			<img src={marketing} style="position: absolute; top: 90vh; right: 10%; height: 34px;" />
 		{/if}
 	</li>
-	<li class="layer opaque" data-depth="0.05" invert-x="false" invert-y="false">
+	<li class="layer opaque" data-depth="0.005" invert-x="false" invert-y="false">
 		{#if showNames}
-			<img src={ai} style="position: absolute; top: 25%; right: 25%; height: 34px;" />
+			<img src={ai} style="position: absolute; top: 25vh; right: 25%; height: 34px;" />
 		{/if}
 	</li>
 
-	<li class="layer transparent" data-depth="0.6">
+	<li class="layer transparent" data-depth="0.06">
 		<img
 			src={cross}
 			class="cross"
 			alt="Parallax Cross"
-			style="position: absolute; top: 25%; left: 25%;"
+			style="position: absolute; top: 25vh; left: 25%;"
 		/>
 		<img
 			src={cross}
 			class="cross"
 			alt="Parallax Cross"
-			style="position: absolute; bottom: 25%; right: 25%;"
+			style="position: absolute; top: 75vh; right: 25%;"
 		/>
 		<!-- <img src={cross} alt="Parallax Cross" style="position: absolute; top: 33%; right: 33%;" /> -->
 	</li>
-	<li class="layer transparent" data-depth="-0.4">
+	<li class="layer transparent" data-depth="-0.04">
 		<img
 			src={cross}
 			class="cross"
 			alt="Parallax Cross"
-			style="position: absolute; top: 5%; left: 5%;"
+			style="position: absolute; top: 5vh; left: 5%;"
 		/>
 		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 5%; left: 10%;" />
 		<img
 			src={cross}
 			class="cross"
 			alt="Parallax Cross"
-			style="position: absolute; top: 50%; right: 10%;"
+			style="position: absolute; top: 50vh; right: 10%;"
 		/>
-		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 10%; right: 5%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 90vh; right: 5%;" />
 	</li>
-	<li class="layer transparent" data-depth="0.15">
-		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; left: 20%;" />
-		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7%; right: 20%;" />
+	<li class="layer transparent" data-depth="0.015">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7vh; left: 20%;" />
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 7vh; right: 20%;" />
 	</li>
-	<li class="layer transparent" data-depth="0.2">
-		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 15%; right: 60%;" />
+	<li class="layer transparent" data-depth="0.02">
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 85vh; right: 60%;" />
 	</li>
-	<li class="layer transparent" data-depth="-0.1">
+	<li class="layer transparent" data-depth="-0.01">
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
@@ -99,7 +99,7 @@
 		<img
 			class="circle-dotted"
 			src={circle_dotted}
-			style="position: absolute; left: 100px; bottom: 15%"
+			style="position: absolute; left: 100px; top: 85vh"
 			alt="Circle Dotted"
 		/>
 		<img
@@ -109,6 +109,23 @@
 			alt="Circle Dotted"
 		/>
 	</li>
+
+	<li class="layer transparent" data-depth="-0.04">
+		<img
+			src={cross}
+			class="cross"
+			alt="Parallax Cross"
+			style="position: absolute; top: 125vh; left: 5%;"
+		/>
+		<img src={cross} alt="Parallax Cross" style="position: absolute; bottom: 5%; left: 10%;" />
+		<img
+			src={cross}
+			class="cross"
+			alt="Parallax Cross"
+			style="position: absolute; top: 149vh; right: 10%;"
+		/>
+		<img src={cross} alt="Parallax Cross" style="position: absolute; top: 90vh; right: 5%;" />
+	</li>
 </ul>
 
 <style>
@@ -116,7 +133,7 @@
 		animation: fadeIn 1s;
 	}
 	.transparent {
-		opacity: 0.3;
+		opacity: 1;
 		animation: almostFadeIn 1s;
 	}
 	@keyframes rotate {
@@ -135,8 +152,8 @@
 		position: absolute;
 	}
 	#scene {
-		position: fixed;
-		height: 100svh;
+		position: absolute;
+		height: 100%;
 		width: 100vw;
 		top: 0;
 		left: 0;
@@ -158,7 +175,7 @@
 			opacity: 0;
 		}
 		to {
-			opacity: 0.3;
+			opacity: 1;
 		}
 	}
 </style>

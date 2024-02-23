@@ -1,16 +1,183 @@
+<script>
+	import { inview } from 'svelte-inview';
+
+	let text = 'Start a new project^ with% us in just^ a few clicks_';
+	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
+
+	let index = -8;
+	let speed = 30; // Time between letters
+	// let speed = 1; // Time between letters
+
+	let isTitleInView;
+	const options = {
+		unobserveOnEnter: true,
+		rootMargin: '-128px'
+	};
+
+	const handleTitleChange = ({ detail }) => {
+		isTitleInView = detail.inView;
+		if (isTitleInView) {
+			const interval = setInterval(() => {
+				if (index < text.length + 5) {
+					if (index >= 0 && index < text.length) {
+						displayedText = [
+							...displayedText.slice(0, index),
+							setMetaVisible(displayedText.at(index)),
+							setMetaUnderscore(displayedText.at(index + 1)),
+							...displayedText.slice(index + 2)
+						].filter(Boolean);
+					}
+					index++;
+				} else {
+					clearInterval(interval);
+				}
+			}, speed);
+		}
+	};
+
+	function Meta() {
+		this.state = 'transparent';
+	}
+
+	function setMetaState(meta, state) {
+		if (typeof meta !== 'object') {
+			console.log('setMetaState: unexpected', typeof meta, meta);
+			return meta;
+		}
+		return {
+			...meta,
+			state
+		};
+	}
+
+	function setMetaVisible(meta) {
+		return setMetaState(meta, 'visible');
+	}
+
+	function setMetaUnderscore(meta) {
+		return setMetaState(meta, 'underscore');
+	}
+
+	function makeMetaSymbol(char) {
+		const meta = new Meta();
+		meta.type = 'symbol';
+		meta.value = char;
+		return meta;
+	}
+
+	function makeMetaSpecial(special) {
+		const meta = new Meta();
+		meta.type = 'special';
+		meta.value = special;
+		return meta;
+	}
+
+	function makeMeta(symbol) {
+		switch (true) {
+			case symbol === '^':
+				return makeMetaSpecial('waiter');
+			case symbol === '%':
+				return makeMetaSpecial('endofline');
+			case symbol === '_':
+				return makeMetaSpecial('lastunderscore');
+			default:
+				return makeMetaSymbol(symbol);
+		}
+	}
+
+	function keyWrapper(object, index) {
+		if (typeof object !== 'object') {
+			console.log('keyWrapper: unexpected');
+			return object;
+		}
+
+		object.key = index;
+
+		return object;
+	}
+</script>
+
 <section class="cta-container">
 	<div class="width-restriction">
-		<h2>Start a new project with<br /> us in just a few clicks_</h2>
-		<p class="subtitle">Book a free call and Turn your maybe into definitely</p>
-		<div class="gradient-wrapper">
-			<div class="another-wrapper">
-				<button> Book A Call </button>
+		<h2 use:inview={options} on:inview_change={handleTitleChange}>
+			{#each displayedText as { type, value, state, key } (key)}
+				{#if type === 'symbol'}
+					<span
+						class="span-symbol {state === 'visible'
+							? 'span-symbol__visible'
+							: state === 'underscore'
+								? 'span-symbol__underscore'
+								: ''}">{value}</span
+					>
+				{:else if type === 'special'}
+					<!-- svelte-ignore empty-block -->
+					{#if value === 'endofline'}
+						<br />
+					{:else if value === 'waiter'}{:else if value === 'lastunderscore'}
+						<span
+							class="span-symbol {state === 'visible'
+								? 'span-symbol__visible'
+								: state === 'underscore'
+									? 'span-symbol__underscore'
+									: ''}">_</span
+						>
+					{/if}
+				{/if}
+			{/each}
+			<!-- {#if index < text.length} -->
+			<!-- <span class="underscore">_</span> -->
+			<!-- {/if} -->
+		</h2>
+		<p
+			class="subtitle {index == text.length + 5 ? 'fade-in' : ''}"
+			style={index == text.length + 5 ? 'visibility: visible;' : 'visibility: hidden;'}
+		>
+			Book a free call and Turn your maybe into definitely
+		</p>
+		<div class={index == text.length + 5 ? 'fade-in' : ''}>
+			<div
+				class="gradient-wrapper"
+				style={index == text.length + 5 ? 'visibility: visible;' : 'visibility: hidden;'}
+			>
+				<div class="another-wrapper">
+					<button> Book A Call </button>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
 <style>
+	.span-symbol {
+		position: relative;
+		opacity: 0;
+	}
+
+	.span-symbol__visible {
+		opacity: 1;
+	}
+
+	.span-symbol__underscore {
+		opacity: 1;
+		color: transparent;
+	}
+
+	.span-symbol__underscore::after {
+		content: '_';
+		font-family: inherit;
+		position: absolute;
+		color: var(--text);
+		/* color: #fff; */
+		top: 0;
+		left: 0;
+	}
+	span {
+		font-family: 'Space Grotesk', sans-serif;
+		letter-spacing: -1px;
+		margin: 0;
+		padding: 0;
+		color: #fff;
+	}
 	.width-restriction {
 		display: flex;
 		flex-direction: column;
@@ -27,6 +194,15 @@
 		margin-top: 48px;
 		margin-bottom: 64px;
 	}
+	@media (max-width: 800px) {
+		.subtitle {
+			font-size: 20px;
+			color: #ccc;
+			margin: 0;
+			margin-top: 24px;
+			margin-bottom: 32px;
+		}
+	}
 	.cta-container {
 		margin: 0;
 		margin-top: 64px;
@@ -39,10 +215,6 @@
 		/* position: absolute; */
 		box-sizing: border-box;
 		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		width: 100%;
 	}
 	.gradient-wrapper {
 		padding: 4px;
@@ -61,13 +233,6 @@
 		);
 		background-size: 200% 200%;
 		border-radius: 16px;
-	}
-
-	@media (max-width: 800px) {
-		.gradient-wrapper {
-			margin-top: 16px;
-			width: 100%;
-		}
 	}
 
 	.gradient-wrapper:hover {
@@ -142,5 +307,34 @@
 		cursor: pointer;
 		text-decoration: none;
 		font-family: 'Space Grotesk', sans-serif;
+	}
+
+	@media (max-width: 1200px) {
+		button {
+			display: inline-block;
+			padding: 20px 80px;
+			background-color: #fff;
+			font-size: 20px;
+			color: #111;
+			border: none;
+			border-radius: 13px;
+			cursor: pointer;
+			text-decoration: none;
+			font-family: 'Space Grotesk', sans-serif;
+		}
+		.cta-container {
+			padding: 72px 24px;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.cta-container {
+			padding: 48px 16px;
+		}
+		.gradient-wrapper {
+			margin-top: 16px;
+			display: flex;
+			width: 100%;
+		}
 	}
 </style>

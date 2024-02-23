@@ -4,6 +4,12 @@
 	import dev from '../lib/assets/workflow/dev.png';
 	import repeat from '../lib/assets/workflow/repeat.png';
 	import { onMount } from 'svelte';
+	import { inview } from 'svelte-inview';
+
+	let isInView;
+	const options = {
+		unobserveOnEnter: true
+	};
 
 	let scrollY = 0;
 	let activeImageIndex = 0;
@@ -29,25 +35,47 @@
 	});
 </script>
 
+<div
+	use:inview={options}
+	on:inview_change={(event) => {
+		const { inView, entry, scrollDirection, observer, node } = event.detail;
+		if (scrollDirection === 'down') {
+			isInView = inView;
+		}
+	}}
+	on:inview_enter={(event) => {
+		const { inView, entry, scrollDirection, observer, node } = event.detail;
+		isInView = inView;
+	}}
+	on:inview_leave={(event) => {
+		const { inView, entry, scrollDirection, observer, node } = event.detail;
+		isInView = inView;
+	}}
+	on:inview_init={(event) => {
+		const { observer, node } = event.detail;
+	}}
+></div>
 <section class="htw-container" id="services">
 	<div class="width-restriction">
-		<h2><span class="title-number">0.</span> How This Works</h2>
-		<h3>
+		<h2 class={isInView ? 'fade-in' : ''}><span class="title-number">0.</span> How This Works</h2>
+		<h3 class={isInView ? 'fade-in' : ''}>
 			Our procedure is straightforward and hassle-free. Choose the option that best fits your
 			requirements, and then schedule a brief 20-minute conversation with us.
 		</h3>
 		<div class="scroll-container">
 			<div class="graphic-section">
 				{#if activeImageIndex == 0}
-					<img src={images[activeImageIndex]} />
+					<img src={images[activeImageIndex]} style="width: 90%;" alt="Choose package graphic" />
 				{:else if activeImageIndex == 1}
-					<img src={images[activeImageIndex]} />
+					<img src={images[activeImageIndex]} alt="Design graphic" id="designImg" />
 				{:else if activeImageIndex == 2}
-					<img src={images[activeImageIndex]} />
+					<img src={images[activeImageIndex]} alt="Graphic with code" />
 				{:else if activeImageIndex == 3}
-					<img src={images[activeImageIndex]} />
-				{:else if activeImageIndex == 4}
-					<img src={images[activeImageIndex]} />
+					<img
+						src={images[activeImageIndex]}
+						style="width: 90%;"
+						alt="A loop showing design, dev and branding"
+					/>
 				{/if}
 				<!-- <img src={choosePackage} alt="Choose package graphic" /> -->
 				<!-- <img src={design} alt="Design graphic" />
@@ -179,6 +207,12 @@
 </section>
 
 <style>
+	/* #designImg {
+        animation: scaleDown 1s ease;
+    }
+    #designImg:hover {
+        animation: scaleUp 1s ease;
+    } */
 	.height-wrapper {
 		height: 100vh;
 		display: flex;
@@ -218,11 +252,15 @@
 		border: 1px #ddd solid;
 		border-radius: 16px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		background-color: #fff;
+	}
+	.text-section:hover {
+		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 	}
 	img {
 		max-width: 100%;
 		min-width: 40%;
-		animation: fadeIn 1s ease;
+		animation: slideUp 1s ease;
 		/* width: 300px;
 		height: 200px; */
 	}
@@ -281,6 +319,17 @@
 		}
 	}
 
+	@media (max-width: 1200px) {
+		.htw-container {
+			padding: 0 24px;
+		}
+	}
+	@media (max-width: 1200px) {
+		.htw-container {
+			padding: 0 16px;
+		}
+	}
+
 	@media (max-width: 800px) {
 		.text-section {
 			padding: 16px;
@@ -302,18 +351,18 @@
 		.scroll-container-mobile {
 			display: flex;
 			flex-direction: column;
-            align-items: center;
+			align-items: center;
 		}
-        .scroll-container {
+		.scroll-container {
 			display: none;
 		}
-        img {
-            width: 80%;
-            margin-top: 64px;
-            margin-bottom: 32px;
-        }
-        .text-section:last-child {
-            margin-bottom: 32px;
-        }
+		img {
+			width: 80%;
+			margin-top: 64px;
+			margin-bottom: 32px;
+		}
+		.text-section:last-child {
+			margin-bottom: 32px;
+		}
 	}
 </style>

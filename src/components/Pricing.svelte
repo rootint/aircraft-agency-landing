@@ -1,14 +1,32 @@
 <script>
 	import aircraft from '../lib/assets/aircraft.svg';
+	import { inview } from 'svelte-inview';
 	let seatsLeft = 5;
+	let isTitleInView, isPricingInView;
+	const options = {
+		unobserveOnEnter: true
+	};
+
+	const handleTitleChange = ({ detail }) => {
+		isTitleInView = detail.inView;
+	};
+	const handlePricingChange = ({ detail }) => {
+		isPricingInView = detail.inView;
+	};
 </script>
 
 <section class="whyus-container" id="pricing">
 	<div class="width-restriction">
-		<h2><span class="title-number">3.</span> Pricing</h2>
-		<h3>One simple fee, no surprises.</h3>
-		<div class="pricing-row">
-			<div class="pricing-card standard">
+		<h2
+			use:inview={options}
+			on:inview_change={handleTitleChange}
+			class={isTitleInView ? 'fade-in' : ''}
+		>
+			<span class="title-number">3.</span> Pricing
+		</h2>
+		<h3 class={isTitleInView ? 'fade-in' : ''}>One simple fee, no surprises.</h3>
+		<div use:inview={options} on:inview_change={handlePricingChange} class="pricing-row">
+			<div class="pricing-card standard {isPricingInView ? 'fade-in' : ''}">
 				<div class="seats-left-container">
 					<p class="seats-left-text">{seatsLeft} seats left!</p>
 				</div>
@@ -52,7 +70,7 @@
 					<p class="option-text">Pause or cancel anytime</p>
 				</div>
 			</div>
-			<div class="pricing-card">
+			<div class="pricing-card {isPricingInView ? 'fade-in' : ''}">
 				<div class="seats-left-container-inactive">
 					<p class="seats-left-text-inactive">Coming soon!</p>
 				</div>
@@ -94,12 +112,12 @@
 </section>
 
 <style>
-    .whyus-container {
-        padding: 0 32px;
-    }
-    .width-restriction {
-        display: block;
-    }
+	.whyus-container {
+		padding: 0 32px;
+	}
+	.width-restriction {
+		display: block;
+	}
 	.seats-left-container-inactive {
 		background-color: rgba(0, 0, 0, 0.1);
 		padding: 6px 16px;
@@ -143,6 +161,9 @@
 		margin-bottom: 32px;
 		cursor: pointer;
 		width: 100%;
+	}
+	.active:hover {
+		box-shadow: 0px 0px 8px 0px rgba(255, 107, 117, 0.5);
 	}
 	.inactive {
 		border-radius: 8px;
@@ -216,7 +237,11 @@
 		border: 1px #ff6b75 solid;
 		box-shadow: 0px 0px 2px 0px rgba(255, 107, 117, 0.25);
 	}
-	@media (max-width: 800px) {
+	.standard:hover {
+		box-shadow: 0px 0px 8px 0px rgba(255, 107, 117, 0.25);
+	}
+
+	@media (max-width: 1200px) {
 		.pricing-row {
 			display: flex;
 			gap: 48px;
@@ -224,9 +249,31 @@
 			width: 100%;
 		}
 		.pricing-card {
+			padding: 24px;
+		}
+		.whyus-container {
+			padding: 0 24px;
+		}
+	}
+	@media (max-width: 800px) {
+		.pricing-row {
+			display: flex;
+			gap: 24px;
+			flex-direction: column;
+			width: 100%;
+		}
+		.pricing-card {
 			min-width: none;
 			width: 100%;
 			max-width: none;
+			padding: 24px;
+		}
+		.whyus-container {
+			padding: 0 16px;
+		}
+		.option-text {
+			font-size: 16px;
+            margin-left: 12px;
 		}
 	}
 </style>

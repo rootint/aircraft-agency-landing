@@ -1,12 +1,41 @@
 <script>
 	import { HelpCircle } from 'lucide-svelte';
+	import { inview } from 'svelte-inview';
+	let isTitleInView, isRow1InView, isRow2InView, isRow3InView;
+	const options = {
+		unobserveOnEnter: true
+	};
+	const handleTitleChange = ({ detail }) => {
+		isTitleInView = detail.inView;
+	};
+	const handleRow1Change = ({ detail }) => {
+		isRow1InView = detail.inView;
+	};
+	const handleRow2Change = ({ detail }) => {
+		isRow2InView = detail.inView;
+	};
+	const handleRow3Change = ({ detail }) => {
+		isRow3InView = detail.inView;
+	};
 </script>
 
 <section class="faq-container" id="faq">
 	<div class="width-restriction">
-		<h2><span class="title-number">4.</span> FAQ</h2>
-		<h3 style="margin-bottom: 40px;">Questions on Your Mind? Find Clarity Here</h3>
-		<div class="question-container">
+		<h2
+			use:inview={options}
+			on:inview_change={handleTitleChange}
+			class={isTitleInView ? 'fade-in' : ''}
+		>
+			<span class="title-number">4.</span> FAQ
+		</h2>
+		<h3 style="margin-bottom: 40px;" class={isTitleInView ? 'fade-in' : ''}>
+			Questions on Your Mind? Find Clarity Here
+		</h3>
+		<div
+			use:inview={options}
+			on:inview_change={handleRow1Change}
+			class="question-container {isRow1InView ? 'fade-in' : ''}"
+		>
 			<div class="title-container">
 				<HelpCircle></HelpCircle>
 				<h4>How does the pause feature work?</h4>
@@ -22,7 +51,11 @@
 				you get full value from your subscription.
 			</p>
 		</div>
-		<div class="question-container">
+		<div
+			use:inview={options}
+			on:inview_change={handleRow2Change}
+			class="question-container {isRow2InView ? 'fade-in' : ''}"
+		>
 			<div class="title-container">
 				<HelpCircle></HelpCircle>
 				<h4>Why wouldn't I just hire a full-time designer or full time developer?</h4>
@@ -42,7 +75,11 @@
 			</p>
 		</div>
 		<div class="question-row">
-			<div class="question-container">
+			<div
+				use:inview={options}
+				on:inview_change={handleRow3Change}
+				class="question-container {isRow3InView ? 'fade-in' : ''}"
+			>
 				<div class="title-container">
 					<HelpCircle></HelpCircle>
 					<h4>What if I only have a single request?</h4>
@@ -53,7 +90,11 @@
 					leftover subscription time.
 				</p>
 			</div>
-			<div class="question-container">
+			<div
+				use:inview={options}
+				on:inview_change={handleRow3Change}
+				class="question-container {isRow3InView ? 'fade-in' : ''}"
+			>
 				<div class="title-container">
 					<HelpCircle></HelpCircle>
 					<h4>How much work would I receive in a month?</h4>
@@ -111,10 +152,42 @@
 		padding: 0 32px;
 		width: 100%;
 	}
+	@media (max-width: 1200px) {
+		.faq-container {
+			margin-top: 64px;
+			margin-bottom: 32px;
+			padding: 0 24px;
+			width: 100%;
+		}
+		.question-container {
+			display: flex;
+			flex-direction: column;
+			padding: 24px;
+			border: 1px #ddd solid;
+			border-radius: 16px;
+			margin-bottom: 24px;
+			flex: 1;
+		}
+	}
 	@media (max-width: 800px) {
 		.question-row {
 			flex-direction: column;
 			gap: 0;
+		}
+		.faq-container {
+			margin-top: 64px;
+			margin-bottom: 32px;
+			padding: 0 16px;
+			width: 100%;
+		}
+		.question-container {
+			display: flex;
+			flex-direction: column;
+			padding: 16px;
+			border: 1px #ddd solid;
+			border-radius: 8px;
+			margin-bottom: 16px;
+			flex: 1;
 		}
 	}
 </style>

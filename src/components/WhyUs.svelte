@@ -9,20 +9,48 @@
 	import speed from '../lib/assets/why_us/speed.png';
 	import flexibility from '../lib/assets/why_us/flexibility.png';
 	import satisfaction from '../lib/assets/why_us/satisfaction.png';
+	import { inview } from 'svelte-inview';
+
+	let isTitleInView, isFlexInView, isSatisfactionInView;
+	const options = {
+		unobserveOnEnter: true
+	};
+
+	const handleTitleChange = ({ detail }) => {
+		isTitleInView = detail.inView;
+	};
+	const handleFlexChange = ({ detail }) => {
+		isFlexInView = detail.inView;
+	};
+	const handleSatisfactionChange = ({ detail }) => {
+		isSatisfactionInView = detail.inView;
+	};
 </script>
 
 <section class="whyus-container" id="why-us">
 	<div class="width-restriction">
-		<h2><span class="title-number">2.</span> Why Us</h2>
-		<h3>Elevate Your Project with Aircraft – Beyond the Best, No Exaggeration!</h3>
+		<h2
+			use:inview={options}
+			on:inview_change={handleTitleChange}
+			class={isTitleInView ? 'fade-in' : ''}
+		>
+			<span class="title-number">2.</span> Why Us
+		</h2>
+		<h3 class={isTitleInView ? 'fade-in' : ''}>
+			Elevate Your Project with Aircraft – Beyond the Best, No Exaggeration!
+		</h3>
 		<div class="bento-grid">
-			<div class="grid-element monthly-rate">
+			<div
+				use:inview={options}
+				on:inview_change={handleFlexChange}
+				class="grid-element monthly-rate {isFlexInView ? 'fade-in' : ''}"
+			>
 				<CircleDollarSign size="48" color="#45DEA7"></CircleDollarSign>
 				<h4 class="element-title">Fixed monthly rate</h4>
 				<p>Consistent Pricing, No Surprises – One Fixed Monthly Rate!</p>
 				<img src={pricingCard} alt="A graphic that shows that prices are consistent." />
 			</div>
-			<div class="grid-element flexibility">
+			<div class="grid-element flexibility {isFlexInView ? 'fade-in' : ''}">
 				<AlignHorizontalDistributeCenter size="48" color="#5593E9"
 				></AlignHorizontalDistributeCenter>
 				<h4 class="element-title">Flexibility</h4>
@@ -31,7 +59,7 @@
 				</p>
 				<img src={flexibility} alt="A graphic with a calendar that shows how flexible we are." />
 			</div>
-			<div class="grid-element speed">
+			<div class="grid-element speed {isFlexInView ? 'fade-in' : ''}">
 				<Zap size="48" color="#F9AC6D"></Zap>
 				<h4 class="element-title">Speed</h4>
 				<p>Revisions are made between 24-48hrs</p>
@@ -40,7 +68,11 @@
 					alt="A graphic that says 'A task is done in 2 hours' which shows how fast we are."
 				/>
 			</div>
-			<div class="grid-element satisfaction">
+			<div
+				use:inview={options}
+				on:inview_change={handleSatisfactionChange}
+				class="grid-element satisfaction {isSatisfactionInView ? 'fade-in' : ''}"
+			>
 				<div class="right-side">
 					<CheckCheck size="48" color="#FF6B75"></CheckCheck>
 					<h4 class="element-title">Guaranteed Satisfaction</h4>
@@ -117,6 +149,10 @@
 		border: 1px #ddd solid;
 		border-radius: 16px;
 		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		background-color: #fff;
+	}
+	.grid-element:hover {
+		box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
 	}
 	.bento-grid {
 		display: grid;
@@ -138,6 +174,16 @@
 		}
 		.satisfaction {
 			flex-direction: column;
+		}
+		.whyus-container {
+			margin-bottom: 32px;
+			padding: 32px 16px;
+		}
+		h3 {
+			margin-bottom: 32px;
+		}
+		.grid-element {
+			padding: 16px;
 		}
 	}
 
@@ -161,6 +207,13 @@
 			grid-row: 3;
 			grid-column: 1 / 3;
 			display: flex;
+		}
+		.whyus-container {
+			margin-bottom: 48px;
+			padding: 48px 24px;
+		}
+		.grid-element {
+			padding: 24px;
 		}
 	}
 </style>

@@ -10,6 +10,7 @@
 	import devCursor from '../lib/assets/what_we_do/dev_cursor.svg';
 	import devCss from '../lib/assets/what_we_do/dev2.svg';
 	import devSvelte from '../lib/assets/what_we_do/dev1.svg';
+	import { inview } from 'svelte-inview';
 
 	let aircraftX = 200;
 	let aircraftY = 100;
@@ -17,6 +18,11 @@
 	let designY = 100;
 	let devX = 200;
 	let devY = 100;
+
+	let isTitleInView, isDevInView, isBrandingInView;
+	const options = {
+		unobserveOnEnter: true
+	};
 
 	// Function to update image position
 	function moveImage(event) {
@@ -36,14 +42,35 @@
 		devX = Math.min(Math.max(23, event.offsetX), event.target.clientWidth - 23);
 		devY = Math.min(Math.max(9, event.offsetY), event.target.clientHeight);
 	}
+	const handleTitleChange = ({ detail }) => {
+		isTitleInView = detail.inView;
+	};
+	const handleBrandingChange = ({ detail }) => {
+		isBrandingInView = detail.inView;
+	};
+	const handleDevChange = ({ detail }) => {
+		isDevInView = detail.inView;
+	};
 </script>
 
 <section class="wwd-container" id="benefits">
 	<div class="width-restriction">
-		<h2><span class="title-number">1.</span> What We Do</h2>
-		<h3>Subscribe Once, Unlock Every Tool to Elevate Your Business!</h3>
+		<h2
+			use:inview={options}
+			on:inview_change={handleTitleChange}
+			class={isTitleInView ? 'fade-in' : ''}
+		>
+			<span class="title-number">1.</span> What We Do
+		</h2>
+		<h3 class={isTitleInView ? 'fade-in' : ''}>
+			Subscribe Once, Unlock Every Tool to Elevate Your Business!
+		</h3>
 		<div class="bento-grid">
-			<div class="grid-element branding">
+			<div
+				use:inview={options}
+				on:inview_change={handleBrandingChange}
+				class="grid-element branding {isBrandingInView ? 'fade-in' : ''}"
+			>
 				<div class="canvas" on:mousemove={moveImage} on:mouseleave={moveImage}>
 					<img
 						src={brandingAircraft}
@@ -62,7 +89,7 @@
 				</div>
 				<p class="subtitle">Logo, Typography, Brand Voice, Stationery and Business Cards</p>
 			</div>
-			<div class="grid-element design">
+			<div class="grid-element design {isBrandingInView ? 'fade-in' : ''}">
 				<div class="canvas2" on:mousemove={moveImage2} on:mouseleave={moveImage2}>
 					<img
 						src={designCursor}
@@ -79,7 +106,11 @@
 				</div>
 				<p class="subtitle">Landing Page Design, UI/UX</p>
 			</div>
-			<div class="grid-element development">
+			<div
+				use:inview={options}
+				on:inview_change={handleDevChange}
+				class="grid-element development {isDevInView ? 'fade-in' : ''}"
+			>
 				<div class="canvas3" on:mousemove={moveImage3} on:mouseleave={moveImage3}>
 					<img
 						src={devCursor}
@@ -88,7 +119,7 @@
 						alt="An Aircraft logo which you can move using your cursor."
 					/>
 					<img src={devCss} id="devCss" alt="Graphic with a list of icons." />
-                    <img src={devSvelte} id="devSvelte" alt="Graphic with a list of icons." />
+					<img src={devSvelte} id="devSvelte" alt="Graphic with a list of icons." />
 				</div>
 				<div class="row">
 					<Terminal color="#fff"></Terminal>
@@ -101,22 +132,22 @@
 </section>
 
 <style>
-    #cursorDev {
-        position: absolute;
-        z-index: 2;
-        overflow: hidden;
-    }
-    #devCss {
-        position: absolute;
-        top: 16px;
-        left: 0;
-    }
-    #devSvelte {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-    }
+	#cursorDev {
+		position: absolute;
+		z-index: 2;
+		overflow: hidden;
+	}
+	#devCss {
+		position: absolute;
+		top: 16px;
+		left: 0;
+	}
+	#devSvelte {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+	}
 	#cursorDesign {
 		position: absolute;
 		pointer-events: none;
@@ -227,10 +258,14 @@
 		padding: 32px;
 		border: 1px #333 solid;
 		border-radius: 16px;
-		background-color: #151515;
+		background-image: linear-gradient(to bottom right, rgba(21, 21, 21, 1), rgba(21, 21, 21, 0.1));
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
+	}
+
+	.grid-element:hover {
+		box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.25);
 	}
 
 	.branding {
@@ -263,7 +298,27 @@
 		padding: 64px 32px;
 	}
 
+	@media (max-width: 1200px) {
+		.wwd-container {
+			padding: 32px 24px;
+		}
+		.grid-element {
+			padding: 24px;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
 	@media (max-width: 800px) {
+		.wwd-container {
+			padding: 24px 16px;
+		}
+		.grid-element {
+			padding: 16px;
+		}
+		img {
+			max-width: 100%;
+		}
 		.bento-grid {
 			display: flex;
 			flex-direction: column;

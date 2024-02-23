@@ -197,6 +197,39 @@
 		/* color: #fff; */
 		color: #111;
 	}
+
+	@media (max-width: 1200px) {
+		.title {
+			margin: 0;
+			padding: 0;
+			font-size: 100px;
+			line-height: 130%;
+		}
+		span {
+			font-family: 'Space Grotesk', sans-serif;
+			letter-spacing: -2px;
+			margin: 0;
+			padding: 0;
+			/* color: #fff; */
+			color: #111;
+		}
+	}
+	@media (max-width: 1000px) {
+		.title {
+			margin: 0;
+			padding: 0;
+			font-size: 92px;
+			line-height: 130%;
+		}
+		span {
+			font-family: 'Space Grotesk', sans-serif;
+			letter-spacing: -1px;
+			margin: 0;
+			padding: 0;
+			/* color: #fff; */
+			color: #111;
+		}
+	}
 	.gradient-wrapper {
 		padding: 4px;
 		background: linear-gradient(
@@ -316,6 +349,16 @@
 		height: 100vh;
 		min-height: -webkit-fill-available;
 		padding: 0 32px;
+	}
+	@media (max-width: 1200px) {
+		section.hero {
+			padding: 0 24px;
+		}
+	}
+	@media (max-width: 800px) {
+		section.hero {
+			padding: 0 16px;
+		}
 	}
 	.fade-in {
 		opacity: 1;
