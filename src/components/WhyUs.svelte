@@ -109,7 +109,7 @@
 	}
 	.left-side > img {
 		max-height: 80%;
-        /* height: 300px; */
+		/* height: 300px; */
 	}
 	/* TODO: make the image smaller */
 	/* .left-side > img {
@@ -229,6 +229,14 @@
 		}
 		.left-side {
 			padding-left: 0px;
+		}
+		p {
+			color: #777;
+			font-weight: 500;
+			font-family: 'Inter', sans-serif;
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 32px;
 		}
 	}
 </style>

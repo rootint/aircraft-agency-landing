@@ -148,7 +148,8 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		height: 100%;
+        max-height: 100%;
+		/* height: 100%; */
 		pointer-events: none;
 	}
 	#cursorDesign {

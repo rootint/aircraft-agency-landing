@@ -314,7 +314,8 @@
 		}
 		.modal {
 			width: 100wv;
-			height: 100svh;
+			height: 100vh;
+            overflow: scroll;
 		}
 		.modal-content {
             margin: 16px;
