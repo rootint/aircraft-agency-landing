@@ -250,6 +250,8 @@
 			gap: 48px;
 			flex-direction: column;
 			width: 100%;
+            justify-content: center;
+            align-items: center;
 		}
 		.pricing-card {
 			padding: 24px;
@@ -264,6 +266,8 @@
 			gap: 24px;
 			flex-direction: column;
 			width: 100%;
+            justify-content: center;
+            align-items: center;
 		}
 		.pricing-card {
 			min-width: none;

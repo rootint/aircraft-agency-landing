@@ -158,18 +158,26 @@
 	}
 	.text-container {
 		position: relative;
-		overflow: hidden;
-		height: 120px;
 		background-color: #111;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 48px;
 		margin-top: 16px;
+		padding: 24px 16px;
 	}
 	h2 {
 		font-family: 'Space Grotesk', sans-serif;
 		font-size: 48px;
 		color: #fff;
+		text-align: center;
+	}
+	@media (max-width: 800px) {
+		h2 {
+			font-family: 'Space Grotesk', sans-serif;
+			color: var(--text);
+			font-size: 32px;
+			margin: 0;
+		}
 	}
 </style>

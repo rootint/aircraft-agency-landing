@@ -102,11 +102,13 @@
 	}
 	.left-side {
 		width: 50%;
-		display: flex;
 		padding-left: 32px;
 	}
 	img {
 		max-width: 100%;
+	}
+	.left-side > img {
+		height: 80%;
 	}
 	/* TODO: make the image smaller */
 	/* .left-side > img {
@@ -143,6 +145,8 @@
 		grid-column: 2 / 4;
 		display: flex;
 		justify-content: space-between;
+        align-items: start;
+        width: 100%;
 	}
 	.grid-element {
 		padding: 32px;
@@ -174,6 +178,8 @@
 		}
 		.satisfaction {
 			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 		}
 		.whyus-container {
 			margin-bottom: 32px;
@@ -184,6 +190,9 @@
 		}
 		.grid-element {
 			padding: 16px;
+		}
+		.left-side {
+			padding-left: 0px;
 		}
 	}
 
@@ -214,6 +223,12 @@
 		}
 		.grid-element {
 			padding: 24px;
+		}
+		.left-side {
+			padding-left: 0px;
+		}
+		.left-side > img {
+			height: 80%;
 		}
 	}
 </style>

@@ -14,10 +14,10 @@
 
 	let aircraftX = 200;
 	let aircraftY = 100;
-	let designX = 200;
+	let designX = 100;
 	let designY = 100;
-	let devX = 200;
-	let devY = 100;
+	let devX = 50;
+	let devY = 50;
 
 	let isTitleInView, isDevInView, isBrandingInView;
 	const options = {
@@ -40,7 +40,7 @@
 	}
 	function moveImage3(event) {
 		devX = Math.min(Math.max(23, event.offsetX), event.target.clientWidth - 23);
-		devY = Math.min(Math.max(9, event.offsetY), event.target.clientHeight);
+		devY = Math.min(Math.max(9, event.offsetY), event.target.clientHeight - 10);
 	}
 	const handleTitleChange = ({ detail }) => {
 		isTitleInView = detail.inView;
@@ -136,22 +136,25 @@
 		position: absolute;
 		z-index: 2;
 		overflow: hidden;
+        pointer-events: none;
 	}
 	#devCss {
 		position: absolute;
 		top: 16px;
 		left: 0;
+        pointer-events: none;
 	}
 	#devSvelte {
 		position: absolute;
 		top: 0;
 		right: 0;
 		height: 100%;
+        pointer-events: none;
 	}
 	#cursorDesign {
 		position: absolute;
 		pointer-events: none;
-		z-index: 2;
+		z-index: 3;
 		overflow: hidden;
 	}
 	#designWeb {
@@ -159,12 +162,16 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+        pointer-events: none;
+		z-index: 1;
 	}
 	#designMobile {
 		z-index: 0;
 		position: absolute;
 		top: 0;
 		right: 0;
+        pointer-events: none;
+		z-index: 2;
 	}
 	.canvas {
 		display: flex;
