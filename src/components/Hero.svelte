@@ -347,7 +347,7 @@
 		align-items: start;
 		justify-content: center;
 		width: 100%;
-		height: 100vh;
+		height: 100svh;
 		min-height: -webkit-fill-available;
 		padding: 0 32px;
 	}
