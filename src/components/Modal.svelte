@@ -321,6 +321,7 @@
             margin: 16px;
 			height: calc(100vh - 16px);
 			padding: 16px;
+            padding-bottom: 64px;
 			overflow: scroll;
 		}
 		/* .modal {
