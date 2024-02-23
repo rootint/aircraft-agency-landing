@@ -3,7 +3,7 @@
 	let seatsLeft = 5;
 </script>
 
-<section class="whyus-container">
+<section class="whyus-container" id="pricing">
 	<div class="width-restriction">
 		<h2><span class="title-number">3.</span> Pricing</h2>
 		<h3>One simple fee, no surprises.</h3>

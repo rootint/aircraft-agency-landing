@@ -2,7 +2,7 @@
 	import { HelpCircle } from 'lucide-svelte';
 </script>
 
-<section class="faq-container">
+<section class="faq-container" id="faq">
 	<div class="width-restriction">
 		<h2><span class="title-number">4.</span> FAQ</h2>
 		<h3 style="margin-bottom: 40px;">Questions on Your Mind? Find Clarity Here</h3>
@@ -70,10 +70,10 @@
 </section>
 
 <style>
-    .width-restriction {
-        display: flex;
-        flex-direction: column;
-    }
+	.width-restriction {
+		display: flex;
+		flex-direction: column;
+	}
 	.question-row {
 		display: flex;
 		gap: 24px;

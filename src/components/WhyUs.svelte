@@ -11,7 +11,7 @@
 	import satisfaction from '../lib/assets/why_us/satisfaction.png';
 </script>
 
-<section class="whyus-container">
+<section class="whyus-container" id="why-us">
 	<div class="width-restriction">
 		<h2><span class="title-number">2.</span> Why Us</h2>
 		<h3>Elevate Your Project with Aircraft – Beyond the Best, No Exaggeration!</h3>
@@ -60,7 +60,7 @@
 <style>
 	.whyus-container {
 		margin-bottom: 64px;
-		padding: 0 32px;
+		padding: 64px 32px;
 	}
 	.width-restriction {
 		flex-direction: column;

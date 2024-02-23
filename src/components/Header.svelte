@@ -17,7 +17,6 @@
 	function handleScroll() {
 		const scrollOffset = 96;
 		aircraftOpacity = Math.max(0, (scrollOffset - window.scrollY) / scrollOffset);
-		console.log(aircraftOpacity);
 	}
 
 	onMount(() => {

@@ -9,8 +9,8 @@
 	let displayedText = text.split('').map((char, index) => keyWrapper(makeMeta(char), index));
 
 	let index = -8;
-	let speed = 75; // Time between letters
-	// let speed = 1; // Time between letters
+	// let speed = 75; // Time between letters
+	let speed = 1; // Time between letters
 
 	function Meta() {
 		this.state = 'transparent';

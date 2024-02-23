@@ -12,8 +12,8 @@
 	function handleScroll() {
 		const sectionHeight = window.innerHeight;
 		let elem = document.querySelector('.graphic-section');
-		console.log(window.scrollY);
-		console.log(elem.getBoundingClientRect());
+		// console.log(window.scrollY);
+		// console.log(elem.getBoundingClientRect());
 		activeImageIndex = Math.floor(
 			Math.max(0, window.scrollY - elem.getBoundingClientRect().height + window.innerHeight * 0.4) /
 				sectionHeight
@@ -29,7 +29,7 @@
 	});
 </script>
 
-<section class="htw-container">
+<section class="htw-container" id="services">
 	<div class="width-restriction">
 		<h2><span class="title-number">0.</span> How This Works</h2>
 		<h3>
@@ -117,6 +117,64 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="scroll-container-mobile">
+			<img src={images[0]} />
+			<div class="text-section">
+				<h3 class="section-title">
+					<span class="step" style="color: #5593E9;">Step 1. </span>Choose Package
+				</h3>
+				<p class="section-body">
+					After meeting with you to discuss your project's specifics, you can select from our
+					available options, which currently include only the Standard and Premium packages,
+					covering Branding, Design, Development, and more.
+				</p>
+			</div>
+			<img src={images[1]} />
+			<div class="text-section">
+				<h3 class="section-title">
+					<span class="step" style="color: #FF6B75;">Step 2. </span>Receive Designs
+				</h3>
+				<p class="section-body">
+					Our team of creative experts will then translate your vision into initial concepts. This
+					stage is all about exploring different directions and possibilities, ensuring we cover a
+					broad spectrum of ideas that align with your project's objectives. <br />
+					<br />After presenting you with the initial concepts, we closely collaborate with you to
+					refine the designs. Your feedback is crucial during this phase, as it guides the iterative
+					process of tweaking and perfecting the designs to match your vision precisely.
+				</p>
+			</div>
+			<img src={images[2]} />
+			<div class="text-section">
+				<h3 class="section-title">
+					<span class="step" style="color: #E072CC;">Step 3. </span>Development
+				</h3>
+				<p class="section-body">
+					Our development process, designed to turn your vision into a fully functional product,
+					begins with detailed planning and strategizing, ensuring a clear roadmap and technical
+					foundation. We employ an agile methodology for flexible, iterative progress, complemented
+					by rigorous quality assurance testing to guarantee reliability, security, and
+					user-friendliness. Following meticulous development and testing phases, we manage a smooth
+					deployment and launch.
+				</p>
+			</div>
+			<img src={images[3]} />
+			<div class="text-section">
+				<h3 class="section-title">
+					<span class="step" style="color: #9A6FDF;">Last Step. </span>Repeat or Leave
+				</h3>
+				<p class="section-body">
+					Our relationship doesn't end at launch. We offer comprehensive post-launch support to
+					address any subsequent needs or enhancements. Whether it's updates, maintenance, or
+					scaling your project to accommodate growth, we're here to provide ongoing assistance to
+					ensure your product continues to perform optimally.<br />
+					Our development team combines technical expertise with creative thinking to transform your
+					vision into a robust and scalable digital solution. We're committed to delivering excellence
+					and empowering your business through cutting-edge technology and innovative development practices.
+					Let's build something extraordinary together.
+				</p>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -130,10 +188,10 @@
 		height: unset;
 		margin-top: 96px;
 	}
-    .height-wrapper:last-child {
+	.height-wrapper:last-child {
 		/* height: unset; */
 		margin-top: 96px;
-        margin-bottom: 96px;
+		/* margin-bottom: 96px; */
 	}
 	.width-restriction {
 		margin-top: 128px;
@@ -164,7 +222,7 @@
 	img {
 		max-width: 100%;
 		min-width: 40%;
-        animation: fadeIn 1s ease;
+		animation: fadeIn 1s ease;
 		/* width: 300px;
 		height: 200px; */
 	}
@@ -197,7 +255,65 @@
 	}
 	.scroll-section {
 		width: 50%;
-		height: 400vh;
+		height: 370vh;
 		flex: 1;
+	}
+	.scroll-container-mobile {
+		display: none;
+	}
+	@media (max-width: 1200px) {
+		.text-section {
+			padding: 24px;
+			border: 1px #ddd solid;
+			border-radius: 16px;
+			box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		}
+		.section-title {
+			margin: 0;
+			margin-bottom: 32px;
+			font-size: 24px;
+			color: #111;
+			font-family: 'Space Grotesk', sans-serif;
+		}
+		.section-body {
+			font-size: 16px;
+			line-height: 140%;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.text-section {
+			padding: 16px;
+			border: 1px #ddd solid;
+			border-radius: 16px;
+			box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		}
+		.section-title {
+			margin: 0;
+			margin-bottom: 32px;
+			font-size: 20px;
+			color: #111;
+			font-family: 'Space Grotesk', sans-serif;
+		}
+		.section-body {
+			font-size: 16px;
+			line-height: 140%;
+		}
+		.scroll-container-mobile {
+			display: flex;
+			flex-direction: column;
+            align-items: center;
+		}
+        .scroll-container {
+			display: none;
+		}
+        img {
+            width: 80%;
+            margin-top: 64px;
+            margin-bottom: 32px;
+        }
+        .text-section:last-child {
+            margin-bottom: 32px;
+        }
 	}
 </style>

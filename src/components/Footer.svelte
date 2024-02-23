@@ -8,6 +8,7 @@
 <style>
 	.footer-container {
 		background-color: #111;
+		padding: 32px;
 	}
 
 	.width-restriction {
@@ -17,6 +18,5 @@
 	p {
 		font-weight: 500;
 		color: #fff;
-		padding: 32px;
 	}
 </style>
