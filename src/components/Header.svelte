@@ -82,9 +82,9 @@
 		border-radius: 16px;
 		border: solid #ddd 1px;
 		padding: 16px 48px;
-		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
 		background-color: #fff;
 		gap: 48px;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
 	}
 
 	.center-nav > a {
@@ -116,7 +116,7 @@
 		background-color: #fff;
 		font-weight: 500;
 		font-size: 16px;
-		box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+		box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		color: #111;
 	}
