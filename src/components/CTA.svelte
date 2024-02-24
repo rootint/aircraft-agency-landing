@@ -135,7 +135,7 @@
 			class="subtitle {index == text.length + 5 ? 'fade-in' : ''}"
 			style={index == text.length + 5 ? 'visibility: visible;' : 'visibility: hidden;'}
 		>
-			Book a free call and Turn your maybe into definitely
+			Book a free call and Turn your "maybe" into "definitely"
 		</p>
 		<div class={index == text.length + 5 ? 'fade-in' : ''}>
 			<div

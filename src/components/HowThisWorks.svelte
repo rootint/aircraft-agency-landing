@@ -90,7 +90,7 @@
 						</h3>
 						<p class="section-body">
 							After meeting with you to discuss your project's specifics, you can select from our
-							available options, which currently include only the Standard and Premium packages,
+							available options, which currently includes only the Standard and Premium packages,
 							covering Branding, Design, Development, and more.
 						</p>
 					</div>
