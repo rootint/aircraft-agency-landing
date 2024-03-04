@@ -252,7 +252,7 @@
 
 	@media (max-width: 800px) {
 		.gradient-wrapper {
-            display: flex;
+			display: flex;
 			margin-top: 32px;
 			width: 100%;
 		}
@@ -359,7 +359,7 @@
 	@media (max-width: 800px) {
 		section.hero {
 			padding: 0 16px;
-            height: unset;
+			height: unset;
 		}
 		.title {
 			font-size: 64px;
@@ -367,11 +367,11 @@
 		span {
 			letter-spacing: 0px;
 		}
-        button {
-            padding: 16px 80px;
-            font-size: 20px;
-            width: 100%;
-        }
+		button {
+			padding: 16px 80px;
+			font-size: 20px;
+			width: 100%;
+		}
 	}
 	.fade-in {
 		opacity: 1;
@@ -385,11 +385,30 @@
 	}
 
 	@keyframes fadeInAnimation {
-        from {
-            opacity: 0;
-        }
+		from {
+			opacity: 0;
+		}
 		to {
 			opacity: 1;
 		}
+	}
+
+	@media (max-height: 800px) {
+		.title {
+			font-size: 80px;
+		}
+
+        button {
+            padding: 20px 108px;
+            font-size: 20px;
+        }
+
+        section.hero {
+            margin-top: 32px;
+        }
+
+        .gradient-wrapper {
+            margin-top: 64px;
+        }
 	}
 </style>
